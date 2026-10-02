@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="415" viewBox="0 0 500 415" fill="none">
+  <title>Separate paths, a shared direction</title>
+  <desc>Three flowing ribbons gather into a single rising band of blue threads, a study of a team taking shape through shared work.</desc>
+  <defs>
+    <linearGradient id="ribbon" x1="88" y1="302" x2="433" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#174bea" stop-opacity="0.03"/>
+      <stop offset="0.58" stop-color="#174bea" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="#174bea" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="53" y1="230" x2="438" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b92ba"/>
+      <stop offset="0.55" stop-color="#174bea"/>
+      <stop offset="1" stop-color="#1039b7"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#d9ddd9" stroke-width="0.75">
+    <path d="M44 58h412M44 357h412M44 58v299M456 58v299"/>
+    <path d="M44 158h412M44 258h412M147 58v299M250 58v299M353 58v299" stroke-dasharray="2 7"/>
+  </g>
+  <g fill="#bec9d3">
+    <circle cx="44" cy="58" r="2"/><circle cx="456" cy="58" r="2"/>
+    <circle cx="44" cy="357" r="2"/><circle cx="456" cy="357" r="2"/>
+  </g>
+  <path d="M53 99C163 99 158 263 255 244C354 225 354 76 439 76L439 159C354 159 354 330 255 290C158 283 163 140 53 140Z" fill="url(#ribbon)"/>
+  <path d="M53 218C157 218 161 222 255 244C354 225 354 76 439 76L439 159C354 159 354 330 255 290C161 278 157 259 53 259Z" fill="url(#ribbon)"/>
+  <path d="M53 332C160 332 177 223 255 244C354 225 354 76 439 76L439 159C354 159 354 330 255 290C177 291 160 366 53 366Z" fill="url(#ribbon)"/>
+
+  <g stroke="#65778c" stroke-width="1.1" stroke-linecap="round">
+    <path d="M53 99.00C163 99.00 158 263.00 255 244.00" opacity="0.50"/>
+    <path d="M53 104.12C163 104.12 158 265.50 255 249.75" opacity="0.54"/>
+    <path d="M53 109.25C163 109.25 158 268.00 255 255.50" opacity="0.59"/>
+    <path d="M53 114.38C163 114.38 158 270.50 255 261.25" opacity="0.63"/>
+    <path d="M53 119.50C163 119.50 158 273.00 255 267.00" opacity="0.68"/>
+    <path d="M53 124.62C163 124.62 158 275.50 255 272.75" opacity="0.72"/>
+    <path d="M53 129.75C163 129.75 158 278.00 255 278.50" opacity="0.76"/>
+    <path d="M53 134.88C163 134.88 158 280.50 255 284.25" opacity="0.81"/>
+    <path d="M53 140.00C163 140.00 158 283.00 255 290.00" opacity="0.85"/>
+  </g>
+  <g stroke="#648ae8" stroke-width="1.1" stroke-linecap="round">
+    <path d="M53 218.00C157 218.00 161 222.00 255 244.00" opacity="0.50"/>
+    <path d="M53 223.12C157 223.12 161 229.00 255 249.75" opacity="0.54"/>
+    <path d="M53 228.25C157 228.25 161 236.00 255 255.50" opacity="0.59"/>
+    <path d="M53 233.38C157 233.38 161 243.00 255 261.25" opacity="0.63"/>
+    <path d="M53 238.50C157 238.50 161 250.00 255 267.00" opacity="0.68"/>
+    <path d="M53 243.62C157 243.62 161 257.00 255 272.75" opacity="0.72"/>
+    <path d="M53 248.75C157 248.75 161 264.00 255 278.50" opacity="0.76"/>
+    <path d="M53 253.88C157 253.88 161 271.00 255 284.25" opacity="0.81"/>
+    <path d="M53 259.00C157 259.00 161 278.00 255 290.00" opacity="0.85"/>
+  </g>
+  <g stroke="#174bea" stroke-width="1.1" stroke-linecap="round">
+    <path d="M53 332.00C160 332.00 177 223.00 255 244.00" opacity="0.50"/>
+    <path d="M53 336.25C160 336.25 177 231.50 255 249.75" opacity="0.54"/>
+    <path d="M53 340.50C160 340.50 177 240.00 255 255.50" opacity="0.59"/>
+    <path d="M53 344.75C160 344.75 177 248.50 255 261.25" opacity="0.63"/>
+    <path d="M53 349.00C160 349.00 177 257.00 255 267.00" opacity="0.68"/>
+    <path d="M53 353.25C160 353.25 177 265.50 255 272.75" opacity="0.72"/>
+    <path d="M53 357.50C160 357.50 177 274.00 255 278.50" opacity="0.76"/>
+    <path d="M53 361.75C160 361.75 177 282.50 255 284.25" opacity="0.81"/>
+    <path d="M53 366.00C160 366.00 177 291.00 255 290.00" opacity="0.85"/>
+  </g>
+  <g stroke="url(#thread)" stroke-width="1.25" stroke-linecap="round">
+    <path d="M255 244.00C354 225.00 354 76.00 439 76.00"/>
+    <path d="M255 246.56C354 230.83 354 80.61 439 80.61"/>
+    <path d="M255 249.11C354 236.67 354 85.22 439 85.22"/>
+    <path d="M255 251.67C354 242.50 354 89.83 439 89.83"/>
+    <path d="M255 254.22C354 248.33 354 94.44 439 94.44"/>
+    <path d="M255 256.78C354 254.17 354 99.06 439 99.06"/>
+    <path d="M255 259.33C354 260.00 354 103.67 439 103.67"/>
+    <path d="M255 261.89C354 265.83 354 108.28 439 108.28"/>
+    <path d="M255 264.44C354 271.67 354 112.89 439 112.89"/>
+    <path d="M255 267.00C354 277.50 354 117.50 439 117.50"/>
+    <path d="M255 269.56C354 283.33 354 122.11 439 122.11"/>
+    <path d="M255 272.11C354 289.17 354 126.72 439 126.72"/>
+    <path d="M255 274.67C354 295.00 354 131.33 439 131.33"/>
+    <path d="M255 277.22C354 300.83 354 135.94 439 135.94"/>
+    <path d="M255 279.78C354 306.67 354 140.56 439 140.56"/>
+    <path d="M255 282.33C354 312.50 354 145.17 439 145.17"/>
+    <path d="M255 284.89C354 318.33 354 149.78 439 149.78"/>
+    <path d="M255 287.44C354 324.17 354 154.39 439 154.39"/>
+    <path d="M255 290.00C354 330.00 354 159.00 439 159.00"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#174bea" stroke-width="1.5">
+    <circle cx="53" cy="119.5" r="5"/>
+    <circle cx="53" cy="238.5" r="5"/>
+    <circle cx="53" cy="349" r="5"/>
+  </g>
+  <path d="M425 191l14-14 14 14M439 177v34" stroke="#174bea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="255" cy="267" r="13" fill="#f7f8f5" stroke="#174bea" stroke-width="1.2"/>
+  <path d="M248 267h14m-7-7v14" stroke="#174bea" stroke-width="1.5"/>
+</svg>

@@ -1,3 +1,6 @@
+# Local implementation plan (intentionally not versioned)
+/PLAN.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
