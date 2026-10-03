@@ -5,6 +5,7 @@ The SciStitch company website, published at [scistitch.com](https://scistitch.co
 ## Editing the site
 
 - `index.html`: homepage, expertise overview, partnership introduction, approach, and team introduction.
+- `projects/index.html`: selected past team contributions to OSL incubator projects and infrastructure, Infodengue, and LiteRev at `/projects/`.
 - `services/index.html`: consulting and development capabilities, practical project scenarios, and engagement options at `/services/`.
 - `partnership/index.html`: the Open Science Labs relationship, its wider network and fiscal-host arrangements, and invitations for new SciStitch partnerships at `/partnership/`.
 - `about/index.html`: the team's origins at Open Science Labs, its Infodengue and LiteRev collaborations, independence as SciStitch, and the Team section at `/about/`.
@@ -18,7 +19,7 @@ The SciStitch company website, published at [scistitch.com](https://scistitch.co
 
 This is a static website. No dependencies, installation, or build are required.
 
-Keep shared navigation and footers consistent across all four HTML files. Internal links and assets use root-relative paths, and each page has its own title, description, canonical URL, and Open Graph metadata. The content, illustrations, and navigation remain available without JavaScript; the mobile menu is progressively enhanced when JavaScript runs.
+Keep shared navigation and footers consistent across all five HTML files. Internal links and assets use root-relative paths, and each page has its own title, description, canonical URL, and Open Graph metadata. The content, illustrations, and navigation remain available without JavaScript; the mobile menu is progressively enhanced when JavaScript runs.
 
 The services page covers scientific computing, data analysis, web development, DevOps, packaging, developer tools, project management, and applied AI, with examples showing how these capabilities work together. The partnership page explains SciStitch's relationship with [Open Science Labs](https://opensciencelabs.org/), including community and partner connections, programs, and routes to fiscal support for eligible joint initiatives. It also invites companies, collaborators, foundations, institutions, communities, and nonprofits to explore new partnerships with SciStitch.
 
@@ -34,7 +35,7 @@ From the repository root, run:
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000, http://localhost:8000/services/, http://localhost:8000/partnership/, and http://localhost:8000/about/. Preview through the server rather than opening files directly, so root-relative links resolve correctly.
+Then open http://localhost:8000, http://localhost:8000/projects/, http://localhost:8000/services/, http://localhost:8000/partnership/, and http://localhost:8000/about/. Preview through the server rather than opening files directly, so root-relative links resolve correctly.
 
 ## Verification
 
@@ -47,7 +48,7 @@ git ls-files PLAN.md
 
 The ignore check should print `PLAN.md`; the tracked-file check should print nothing. Node is only needed for the JavaScript syntax check, not to serve the site.
 
-In a browser, check all four routes at desktop and mobile widths, including 320px. Confirm that links and section anchors work, the active page is indicated, and the menu opens, closes on Escape, and resets on desktop. Check keyboard focus, reduced-motion preferences, and navigation with JavaScript disabled.
+In a browser, check all five routes at desktop and mobile widths, including 320px. Confirm that links and section anchors work, the active page is indicated, and the menu opens, closes on Escape, and resets on desktop. Check keyboard focus, reduced-motion preferences, and navigation with JavaScript disabled.
 
 ## Publishing
 
