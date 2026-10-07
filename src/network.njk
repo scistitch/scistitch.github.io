@@ -36,14 +36,28 @@ contact: {"eyebrow": "Start with your project", "title": "Let’s explore<br />t
             <div class="figure-top">
               <span>PEOPLE × EXPERTISE</span><span aria-hidden="true">[ 06 ]</span>
             </div>
-            <img src="/assets/team-paths.svg" width="500" height="415"
-              alt="Separate ribbons join into a shared direction, representing professionals collaborating on a project."
+            <img src="/assets/professional-network.svg" width="500" height="415"
+              alt="Six individual figures linked by curved blue lines, representing independent professionals connected through collaboration."
               fetchpriority="high" />
             <figcaption>
               <span class="figure-caption-mark" aria-hidden="true">+</span>
               Different perspectives. Shared goals.
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="team-section section-pad" aria-labelledby="professionals-title">
+        <div class="container section-grid">
+          <div class="section-intro">
+            <p class="eyebrow section-label"><span>01 /</span> Our network</p>
+            <h2 id="professionals-title">Collaborating professionals</h2>
+          </div>
+          <div class="team-members">
+            {% for professional in professionals %}
+              {% include "professional-card.njk" %}
+            {% endfor %}
+          </div>
         </div>
       </section>
 

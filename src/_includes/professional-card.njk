@@ -1,0 +1,15 @@
+<article class="team-member" id="{{ professional.id }}" aria-labelledby="{{ professional.id }}-name">
+  <img class="team-portrait" src="{{ professional.photo }}"
+    width="460" height="460" alt="{{ professional.name }}"
+    loading="lazy" decoding="async" />
+  <div class="team-member-copy">
+    <h3 id="{{ professional.id }}-name">{{ professional.name }}</h3>
+    <p class="team-role">{{ professional.headline }}</p>
+    <p>{{ professional.bio }}</p>
+    <div class="inline-links">
+      <a href="{{ professional.linkedin }}" aria-label="{{ professional.name }} on LinkedIn"
+        >LinkedIn <span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </div>
+</article>

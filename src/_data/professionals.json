@@ -1,0 +1,10 @@
+[
+  {
+    "id": "sandro-loch",
+    "name": "Sandro Loch",
+    "headline": "Web developer · Open-source contributor",
+    "bio": "Sandro is a web developer and open-source contributor with experience in Python, Django, Docker, and Conda. He brings that background to SciStitch’s network as an independent collaborator.",
+    "photo": "/assets/sandro-loch.png",
+    "linkedin": "https://www.linkedin.com/in/esloch"
+  }
+]
