@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="415" viewBox="0 0 500 415" fill="none">
+  <title>From a question to working software</title>
+  <desc>Three connected workspaces show assessment of data, implementation of software, and monitoring and support.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#d9ddd9" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <rect x="32" y="40" width="436" height="336" fill="url(#grid)"/>
+  <g stroke="#174bea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M115 173v34h49M157 201l7 6-7 6"/>
+    <path d="M250 269v34h49M292 297l7 6-7 6"/>
+    <path d="M387 365v17H22V118h10" stroke="#9baec7" stroke-width="1" stroke-dasharray="3 6"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#174bea" stroke-width="1.2">
+    <rect x="40" y="64" width="150" height="108" rx="3"/>
+    <rect x="175" y="160" width="150" height="108" rx="3"/>
+    <rect x="310" y="256" width="150" height="108" rx="3"/>
+  </g>
+  <g fill="#174bea" fill-opacity="0.06">
+    <path d="M43 65h144v27H43zM178 161h144v27H178zM313 257h144v27H313z"/>
+  </g>
+  <g stroke="#174bea" stroke-opacity="0.3" stroke-width="0.8">
+    <path d="M40 92h150M175 188h150M310 284h150"/>
+  </g>
+  <g fill="#1039b7" font-family="monospace" font-size="9" letter-spacing="1.2">
+    <text x="53" y="82">01 / ASSESS</text>
+    <text x="188" y="178">02 / BUILD</text>
+    <text x="323" y="274">03 / SUPPORT</text>
+  </g>
+  <!-- Assessment: observations and a fitted curve. -->
+  <path d="M59 107v48h110" stroke="#9baec7" stroke-width="1"/>
+  <path d="M64 145c30 0 37-28 60-28s26 14 42-8" stroke="#174bea" stroke-width="1.5"/>
+  <g fill="#174bea">
+    <circle cx="72" cy="138" r="2.5"/><circle cx="89" cy="142" r="2.5"/>
+    <circle cx="106" cy="119" r="2.5"/><circle cx="124" cy="111" r="2.5"/>
+    <circle cx="142" cy="126" r="2.5"/><circle cx="160" cy="114" r="2.5"/>
+  </g>
+  <!-- Implementation: a small program and its connected components. -->
+  <g stroke="#174bea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M204 206l-9 8 9 8M232 206l9 8-9 8M222 202l-8 24"/>
+    <path d="M260 206h44M260 214h28M260 222h36" stroke-opacity="0.4"/>
+    <path d="M208 244h78" stroke-opacity="0.5"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#174bea" stroke-width="1.2">
+    <rect x="201" y="237" width="14" height="14" rx="2"/>
+    <rect x="240" y="237" width="14" height="14" rx="2"/>
+    <rect x="279" y="237" width="14" height="14" rx="2"/>
+  </g>
+  <!-- Support: a monitored signal, checks, and a feedback path. -->
+  <path d="M329 325h112M329 302h112" stroke="#d9ddd9" stroke-width="0.8"/>
+  <path d="M329 320h16l6-12 8 19 8-26 8 19h15l7-10 7 10h37" stroke="#174bea" stroke-width="1.5" stroke-linejoin="round"/>
+  <g stroke="#174bea" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="337" cy="344" r="6"/><path d="M334 344l2 2 4-4"/>
+    <path d="M352 344h44" stroke-opacity="0.4"/>
+    <circle cx="431" cy="344" r="6"/><path d="M428 344l2 2 4-4"/>
+  </g>
+  <g fill="#174bea">
+    <circle cx="115" cy="172" r="3"/><circle cx="250" cy="268" r="3"/>
+    <circle cx="387" cy="364" r="3"/>
+  </g>
+</svg>

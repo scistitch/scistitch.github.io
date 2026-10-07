@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="415" viewBox="0 0 500 415" fill="none">
+  <title>Open-source tools and research applications</title>
+  <desc>A constellation of code, data visualization, and scientific literature symbols represents past contributions to open-source tools and research projects.</desc>
+  <defs>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="#bdc8da" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect x="30" y="30" width="440" height="355" fill="url(#dots)"/>
+  <circle cx="250" cy="215" r="155" stroke="#bdc8da" stroke-width="0.8" stroke-dasharray="3 7"/>
+  <g stroke="#174bea" stroke-width="1.2" stroke-linecap="round">
+    <path d="M250 139v5M250 167v22M142 255l83-37M358 255l-83-37"/>
+    <path d="M199 94C139 94 91 156 96 226M301 94c60 0 108 62 103 132M153 291c57 55 137 55 194 0" stroke-opacity="0.3"/>
+    <path d="M250 68V45h69M78 265H52v85h21M422 265h26v-53h-19" stroke-opacity="0.4"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#174bea" stroke-width="1.4">
+    <circle cx="250" cy="94" r="45"/>
+    <circle cx="108" cy="270" r="45"/>
+    <circle cx="392" cy="270" r="45"/>
+    <path d="M250 188l24 14v28l-24 14-24-14v-28z" fill="#e9effb"/>
+  </g>
+  <!-- Open-source tools. -->
+  <g stroke="#174bea" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M232 81l-13 13 13 13M268 81l13 13-13 13M257 76l-14 36"/>
+    <!-- Research data and visualization. -->
+    <path d="M84 248v42h49" stroke="#9baec7" stroke-width="1"/>
+    <path d="M89 278l12-10 11 5 17-19"/>
+    <!-- Scientific literature. -->
+    <path d="M377 248h23l12 12v33h-35zM400 248v12h12"/>
+    <path d="M385 269h19M385 277h19M385 285h12" stroke-width="1.1"/>
+    <!-- Shared engineering. -->
+    <path d="M240 216h20M250 206v20"/>
+  </g>
+  <g fill="#174bea">
+    <circle cx="89" cy="278" r="2.4"/><circle cx="101" cy="268" r="2.4"/>
+    <circle cx="112" cy="273" r="2.4"/><circle cx="129" cy="254" r="2.4"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#174bea" stroke-width="1.1">
+    <circle cx="325" cy="45" r="6"/><circle cx="79" cy="350" r="6"/>
+    <circle cx="423" cy="212" r="6"/>
+    <rect x="71" y="168" width="10" height="10" rx="1"/>
+    <rect x="419" y="168" width="10" height="10" rx="1"/>
+    <rect x="245" y="351" width="10" height="10" rx="1"/>
+  </g>
+  <g fill="#1039b7" font-family="monospace" font-size="10" letter-spacing="1.4" text-anchor="middle">
+    <text x="250" y="158">OPEN-SOURCE TOOLS</text>
+    <text x="108" y="335">RESEARCH DATA</text>
+    <text x="392" y="335">LITERATURE</text>
+  </g>
+</svg>
