@@ -10,6 +10,7 @@ SciStitch's public company website is served at **https://scistitch.com/** using
 - `projects/index.html` — selected past team contributions to OSL incubator projects and infrastructure, Infodengue, and LiteRev at `/projects/`.
 - `services/index.html` — services (`/services/`), capabilities and ways to work together.
 - `partnership/index.html` — partnership (`/partnership/`), Open Science Labs relationship and collaboration.
+- `network/index.html` — Professional Network at `/network/`, describing independent collaborators who may join specific projects according to fit and availability.
 - `about/index.html` — about (`/about/`), the team's origins at OSL, the Infodengue and LiteRev collaborations, independence as SciStitch, and a Team section.
 - `styles.css` — shared typography, layout, components, and responsive/accessibility rules.
 - `script.js` — progressive enhancements for mobile navigation and the copyright year.
@@ -19,7 +20,7 @@ SciStitch's public company website is served at **https://scistitch.com/** using
 - `README.md` — setup, editing, preview, and publishing instructions.
 - `PLAN.md` — local working plan, deliberately ignored by Git. Never force-add it.
 
-Shared navigation and footers are written in each HTML file so they work without JavaScript. Update all five pages together when changing either. About navigation links point to `/about/`; the homepage `#about` section remains a short introduction. Use root-relative internal links and assets, directory routes with trailing slashes, and unique page titles, descriptions, canonical URLs, and Open Graph metadata.
+Shared navigation and footers are written in each HTML file so they work without JavaScript. Update all six pages together when changing either. About navigation links point to `/about/`; the homepage `#about` section remains a short introduction. Use root-relative internal links and assets, directory routes with trailing slashes, and unique page titles, descriptions, canonical URLs, and Open Graph metadata.
 
 ## Brand and content
 
@@ -41,6 +42,8 @@ Shared navigation and footers are written in each HTML file so they work without
 - Do not invent client lists, testimonials, statistics, certifications, prices, or delivery promises.
 
 - Projects presents past contributions by the people behind SciStitch, including work at OSL before independence. The owner supplied the contribution details: OSL incubator work on Makim, Sugar, and PyMedX; creation and maintenance of OSL infrastructure (bots, CI, websites, plugins, DevOps, and support tools); Infodengue data visualization, DevOps, and web development; LiteRev technical leadership, AI, clustering, data processing, benchmarking, Celery task orchestration, Elasticsearch, DevOps, and web development. Do not recast these as later SciStitch client engagements or invent results, dates, or current maintenance commitments. PyMedX is a fork of the archived gijswobben/pymed project.
+
+- Professional Network members are independent professionals, not employees. Participation is project-specific and depends on fit and availability. No profiles are supplied yet; do not invent members, imply guaranteed staffing, or add placeholder profiles. Future supplied collaborator profiles belong on Network; the existing founder profile remains on About.
 
 ## Design and implementation
 
@@ -66,7 +69,7 @@ git check-ignore PLAN.md
 git ls-files PLAN.md
 ```
 
-Visit `/`, `/projects/`, `/services/`, `/partnership/`, and `/about/` on http://localhost:8000. Check desktop and mobile widths, local links and fragment targets, page metadata, menu keyboard behavior, current-page indicators, console errors, and no-JavaScript rendering. The last command above should print nothing. Use available browser tooling for screenshots and interaction checks; do not add runtime dependencies just to preview the site.
+Visit `/`, `/projects/`, `/services/`, `/partnership/`, `/network/`, and `/about/` on http://localhost:8000. Check desktop and mobile widths, local links and fragment targets, page metadata, menu keyboard behavior, current-page indicators, console errors, and no-JavaScript rendering. The last command above should print nothing. Use available browser tooling for screenshots and interaction checks; do not add runtime dependencies just to preview the site.
 
 ## Git and publishing
 
