@@ -7,6 +7,11 @@
     <p class="team-role">{{ professional.headline }}</p>
     <p>{{ professional.bio }}</p>
     <div class="inline-links">
+      {% if professional.github %}
+      <a href="{{ professional.github }}" aria-label="{{ professional.name }} on GitHub"
+        >GitHub <span aria-hidden="true">↗</span></a
+      >
+      {% endif %}
       <a href="{{ professional.linkedin }}" aria-label="{{ professional.name }} on LinkedIn"
         >LinkedIn <span aria-hidden="true">↗</span></a
       >
