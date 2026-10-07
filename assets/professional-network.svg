@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="415" viewBox="0 0 500 415" fill="none">
+  <title>Independent professionals, shared connections</title>
+  <desc>Six individual figures arranged in an open constellation, linked by curved blue lines. Each figure remains distinct while connections form a network of collaboration.</desc>
+  <defs>
+    <linearGradient id="connections" x1="98" y1="111" x2="386" y2="336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8da6d9"/>
+      <stop offset="0.5" stop-color="#174bea"/>
+      <stop offset="1" stop-color="#648ae8"/>
+    </linearGradient>
+    <g id="professional">
+      <circle r="27" fill="#f7f8f5" stroke="#174bea" stroke-width="1.4"/>
+      <circle cy="-6" r="5.5" stroke="#174bea" stroke-width="1.4"/>
+      <path d="M-11 12v-2a11 11 0 0 1 22 0v2" stroke="#174bea" stroke-width="1.4" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <g stroke="#d9ddd9" stroke-width="0.75">
+    <path d="M43 58v-15h15M442 43h15v15M43 357v15h15M442 372h15v-15"/>
+    <path d="M43 207h414M250 43v329" stroke-dasharray="2 7"/>
+  </g>
+  <path d="m250 70 136 69-21 143-160 54-107-86 12-139Z" fill="#174bea" fill-opacity="0.025" stroke="#acbddd" stroke-width="0.9" stroke-dasharray="3 8"/>
+  <g stroke="url(#connections)" stroke-width="1.4" stroke-linecap="round">
+    <path d="M110 111Q177 44 250 70M250 70Q369 64 386 139M386 139Q424 224 365 282M365 282Q294 362 205 336M205 336Q106 337 98 250M98 250Q58 170 110 111"/>
+    <path d="M110 111C193 110 289 211 365 282M250 70C278 154 128 199 98 250M386 139C303 128 196 217 205 336" opacity="0.7"/>
+  </g>
+  <g stroke="#648ae8" stroke-width="0.8" stroke-dasharray="2 5" opacity="0.65">
+    <circle cx="250" cy="70" r="38"/>
+    <circle cx="365" cy="282" r="38"/>
+    <circle cx="98" cy="250" r="38"/>
+  </g>
+  <g fill="#f7f8f5" stroke="#648ae8" stroke-width="1">
+    <circle cx="178" cy="88" r="3"/>
+    <circle cx="303" cy="199" r="3"/>
+    <circle cx="280" cy="324" r="3"/>
+    <circle cx="181" cy="184" r="3"/>
+  </g>
+  <use href="#professional" x="110" y="111"/>
+  <use href="#professional" x="250" y="70"/>
+  <use href="#professional" x="386" y="139"/>
+  <use href="#professional" x="365" y="282"/>
+  <use href="#professional" x="205" y="336"/>
+  <use href="#professional" x="98" y="250"/>
+</svg>
