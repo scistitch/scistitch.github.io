@@ -6,7 +6,7 @@ import { parse } from "parse5";
 const output = "_site";
 const navigation = JSON.parse(readFileSync("src/_data/navigation.json", "utf8"));
 const site = JSON.parse(readFileSync("src/_data/site.json", "utf8"));
-const routes = ["/", ...navigation.map((item) => item.url)];
+const routes = ["/", ...navigation.map((item) => item.url), "/images/logo/"];
 const pages = new Map();
 function walk(node, visit) {
   visit(node);
@@ -46,7 +46,7 @@ for (const route of routes) {
       if (node.tagName === "a") links.push(Object.fromEntries(node.attrs.map((a) => [a.name, a.value])));
     });
     assert.deepEqual(links.filter((a) => a.href.startsWith("/")).map((a) => a.href), navigation.map((n) => n.url), `${route}: navigation routes`);
-    assert.deepEqual(links.filter((a) => a["aria-current"] === "page").map((a) => a.href), route === "/" ? [] : [route], `${route}: active navigation`);
+    assert.deepEqual(links.filter((a) => a["aria-current"] === "page").map((a) => a.href), navigation.some((item) => item.url === route) ? [route] : [], `${route}: active navigation`);
   }
   assert(!readFileSync(join(output, filename), "utf8").match(/\{%|\{\{/), `${route}: unrendered template`);
   pages.set(route, { filename, ids, elements });
@@ -72,6 +72,7 @@ for (const [route, page] of pages) {
 const expectedFiles = [
   ...[...pages.values()].map((p) => p.filename),
   ...files("assets", "assets"),
+  ...files("images", "images"),
   "styles.css", "script.js", "CNAME", ".nojekyll", "LICENSE",
 ];
 assert.deepEqual(files(output).sort(), expectedFiles.sort(), "Output must contain only public pages and assets");
