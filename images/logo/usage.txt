@@ -1,0 +1,14 @@
+SciStitch logo kit
+
+SVG: scalable vector originals, with lettering converted to paths. No fonts or remote resources required.
+PNG: RGB web exports. Wordmarks 1520 x 400; symbols and avatars 1024 x 1024; sharing banner 1200 x 630.
+
+Wordmark: use the color version on light backgrounds, black for monochrome printing, and white on dark backgrounds. These files have transparent backgrounds.
+Symbol: use when the name is already visible nearby. Transparent backgrounds.
+Avatar: padded square versions for profile pictures, including circular crops.
+Social banner: a simple landscape logo image for sharing and announcements; individual platform cover requirements may vary.
+
+Keep the proportions, colors, and lettering intact. Leave clear space around the mark. Avoid placing transparent white artwork on light backgrounds.
+Palette: cobalt #174bea; ink #142027; paper #f7f8f5.
+
+The symbol and wordmark are based on SciStitch’s existing website identity. Letter outlines use Manrope Bold; the font license is included in manrope-license.txt.
