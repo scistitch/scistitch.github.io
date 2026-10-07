@@ -47,4 +47,18 @@ contact: {"eyebrow": "Start with your project", "title": "Let’s explore<br />t
         </div>
       </section>
 
+      <section class="team-section section-pad" aria-labelledby="professionals-title">
+        <div class="container section-grid">
+          <div class="section-intro">
+            <p class="eyebrow section-label"><span>01 /</span> Our network</p>
+            <h2 id="professionals-title">Collaborating professionals</h2>
+          </div>
+          <div class="team-members">
+            {% for professional in professionals %}
+              {% include "professional-card.njk" %}
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
       {% include "contact.njk" %}
