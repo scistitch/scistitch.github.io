@@ -9,7 +9,7 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `src/index.njk` — homepage (`/`).
 - `src/services.njk` — capabilities and ways to work together (`/services/`).
 - `src/projects.njk` — past OSL, Infodengue, and LiteRev contributions (`/projects/`).
-- `src/partnership.njk` — País Digital and OSL partnerships and collaboration (`/partnership/`).
+- `src/partnership.njk` — OSL relationship and collaboration (`/partnership/`).
 - `src/network.njk` — independent professional collaborators (`/network/`).
 - `src/about.njk` — team history and cofounder profiles (`/about/`).
 - `src/_includes/` — base layout, metadata, shared header/footer, navigation macro, wordmark, and contact section.
@@ -39,7 +39,7 @@ Change shared templates or data once rather than copying navigation, metadata, h
 - OSL's official website: https://opensciencelabs.org/. Describe the relationship as a partnership; do not imply exclusivity, ownership, guaranteed staffing, or authority to make agreements on OSL's behalf.
 - Use the official OSL logo in `assets/osl-logo.svg`, copied unchanged from `theme/icons/osl-logo-black.svg` in the OpenScienceLabs/opensciencelabs.github.io repository. Link partner logos to https://opensciencelabs.org/. Preserve the original proportions and colors; do not recreate the logo as styled text. The upstream license is retained in `assets/osl-license.txt`.
 - OSL's community and program descriptions on the partnership page are based on its official `/about/`, `/opportunities/`, `/projects/incubation/`, `/projects/affiliation/`, `/learning/`, and `/about/formula/` pages. Preserve these source links. Keep OSL's mentoring and contributor programs distinct from SciStitch's consulting services; do not imply guaranteed placements, funding, program availability, or OSL ownership of affiliated projects. Recheck the official pages before changing program claims.
-- Keep detailed capabilities and practical project scenarios on Services. Partnership includes País Digital’s support for work with companies in Brazil and SciStitch's relationship with OSL, access to its international community and partner network, community initiatives, and routes to fiscal-host support for eligible joint work.
+- Keep detailed capabilities and practical project scenarios on Services. Partnership focuses on SciStitch's relationship with OSL, access to its international community and partner network, community initiatives, and routes to fiscal-host support for eligible joint work.
 - Fiscal hosting is arranged through OSL for eligible collaborations; do not describe SciStitch itself as automatically hosted. Verify details against OSL's `/about/fiscal-sponsor/` and `/consulting/` pages and Open Source Collective's contract guidance. The page distinguishes OSL's Open Source Collective arrangements from its stated GRAPH Network/ASCRES relationship and from SciStitch's independent contracts. OSL's listed partners are not automatically direct SciStitch partners.
 - SciStitch welcomes new partnerships with companies, independent collaborators, foundations, institutions, communities, and nonprofits. Invitations should cover shared projects, research, education, knowledge exchange, and community work, with inquiries sent to `connect@scistitch.com`.
 - Do not invent client lists, testimonials, statistics, certifications, prices, or delivery promises.
@@ -91,5 +91,3 @@ PRs build and validate with read-only permissions. Upstream `main` builds and pu
 For the initial migration, the maintainer must set Settings → Pages → Source to **GitHub Actions** before merging. Do not assume that committing the workflow changes the repository’s publishing settings. Preserve `CNAME` and `.nojekyll` in the output; repository and environment policies govern deployment permissions and approvals.
 
 - Ricky’s concise About bio is based on the owner-supplied CV: AI, data engineering, international development across Africa and Europe, public health, technical education, Masakhane contributions, and a master’s degree in financial engineering. His portrait `assets/ricky-macharm.jpg` is the owner-supplied image, copied unchanged. Do not publish the CV or its private personal details.
-
-- País Digital is a SciStitch partner helping it work with companies in Brazil, as supplied by the site owner. Legal name: PAIS DIGITAL TECNOLOGIA INTELIGENTE LTDA - ME. Its official website https://paisdigital.com.br/ describes a Florianópolis-based company serving Brazil, with software development, consulting, business intelligence, and development-team and production-environment setup. Keep the summary concise; do not invent exclusivity, client results, or contracting terms.
