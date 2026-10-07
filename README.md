@@ -1,61 +1,59 @@
 # SciStitch
 
-The SciStitch company website, published at [scistitch.com](https://scistitch.com/) through GitHub Pages.
+The SciStitch company website at [scistitch.com](https://scistitch.com/), built with Eleventy and Nunjucks and hosted on GitHub Pages.
 
-## Editing the site
+## Local development
 
-- `index.html`: homepage, expertise overview, partnership introduction, approach, and team introduction.
-- `projects/index.html`: selected past team contributions to OSL incubator projects and infrastructure, Infodengue, and LiteRev at `/projects/`.
-- `services/index.html`: consulting and development capabilities, practical project scenarios, and engagement options at `/services/`.
-- `partnership/index.html`: the Open Science Labs relationship, its wider network and fiscal-host arrangements, and invitations for new SciStitch partnerships at `/partnership/`.
-- `network/index.html`: Professional Network at `/network/`, describing independent collaborators who may join specific projects according to fit and availability.
-- `about/index.html`: the team's origins at Open Science Labs, its Infodengue and LiteRev collaborations, independence as SciStitch, and the Team section at `/about/`.
-- `styles.css`: typography, colors, layout, and responsive styles.
-- `script.js`: mobile navigation and the copyright year.
-- `assets/`: mathematical SVG illustrations, founder portrait, favicon, self-hosted Manrope fonts, and upstream licenses.
-- `assets/team-paths.svg` and `assets/partnership-network.svg`: distinct local hero illustrations for About (paths gathering into a shared direction) and Partnership (a globe with open connections).
-- `assets/osl-logo.svg`: official Open Science Labs logo, linked to their homepage. Keep its proportions and colors unchanged.
-- `AGENTS.md`: repository, content, design, and verification guidance for coding agents.
-- `PLAN.md`: local implementation plan, intentionally excluded from Git by `.gitignore`.
-
-This is a static website. No dependencies, installation, or build are required.
-
-Keep shared navigation and footers consistent across all six HTML files. Internal links and assets use root-relative paths, and each page has its own title, description, canonical URL, and Open Graph metadata. The content, illustrations, and navigation remain available without JavaScript; the mobile menu is progressively enhanced when JavaScript runs.
-
-The services page covers scientific computing, data analysis, web development, DevOps, packaging, developer tools, project management, and applied AI, with examples showing how these capabilities work together. The partnership page explains SciStitch's relationship with [Open Science Labs](https://opensciencelabs.org/), including community and partner connections, programs, and routes to fiscal support for eligible joint initiatives. It also invites companies, collaborators, foundations, institutions, communities, and nonprofits to explore new partnerships with SciStitch.
-
-The official contact email is **connect@scistitch.com**. Keep displayed addresses and all `mailto:` links consistent across the site.
-
-The About page follows the team's story: supporting external research projects at OSL, collaborating with Infodengue, forming a later team for LiteRev, and establishing SciStitch as an independent consulting organization that OSL can call on. The historical sequence and Infodengue's direct contracting of some collaborators come from the site owner. Official project, GRAPH Network, and UNIGE sources supply names, project descriptions, and research connections. These early collaborations are presented as work at OSL. Ivan's short profile sits in the Team section, with Makim and Sugar linked as examples of his authorship. Keep detailed services and partnership arrangements on their respective pages.
-
-## Local preview
-
-From the repository root, run:
+Use Node.js 24 or newer and npm:
 
 ```sh
-python -m http.server 8000
+npm ci
+npm run dev
 ```
 
-Then open http://localhost:8000, http://localhost:8000/projects/, http://localhost:8000/services/, http://localhost:8000/partnership/, http://localhost:8000/network/, and http://localhost:8000/about/. Preview through the server rather than opening files directly, so root-relative links resolve correctly.
-
-## Verification
+Open http://localhost:8080. Eleventy rebuilds when templates or assets change.
 
 ```sh
-node --check script.js
-git diff --check
-git check-ignore PLAN.md
-git ls-files PLAN.md
+npm test
 ```
 
-The ignore check should print `PLAN.md`; the tracked-file check should print nothing. Node is only needed for the JavaScript syntax check, not to serve the site.
+This builds the site and checks generated HTML, page metadata, navigation, local links, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all six routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
 
-In a browser, check all six routes at desktop and mobile widths, including 320px. Confirm that links and section anchors work, the active page is indicated, and the menu opens, closes on Escape, and resets on desktop. Check keyboard focus, reduced-motion preferences, and navigation with JavaScript disabled.
+## Editing
 
-## Publishing
+- `src/index.njk`, `src/services.njk`, `src/projects.njk`, `src/partnership.njk`, `src/network.njk`, and `src/about.njk`: page-specific content and front matter.
+- `src/_includes/base.njk`: document layout.
+- `src/_includes/head.njk`, `header.njk`, `footer.njk`, `navigation.njk`, `wordmark.njk`, and `contact.njk`: shared page elements. Navigation is rendered from one shared macro; contact text is supplied by each page’s front matter.
+- `src/_data/navigation.json`: navigation labels and routes, used by every navigation surface.
+- `src/_data/site.json`: canonical site URL and shared business contact.
+- `styles.css`, `script.js`, and `assets/`: source styles, progressive enhancements, local artwork, fonts, portraits, and their licenses. These are copied without changes.
+- `eleventy.config.js`: template configuration and the public files to copy.
+- `scripts/check-site.js`: checks the generated site.
+- `AGENTS.md`: content and implementation guidance. `PLAN.md` remains ignored.
 
-GitHub Pages publishes the root of the `main` branch automatically. Commit and push changes to `main` to update the website. The `.nojekyll` file tells Pages to serve these files directly.
+Pages keep their existing directory URLs. Front matter supplies the title, descriptions, permalink, and contact section. HTML in `contact.title` and `contact.description` is trusted repository content; it is rendered with Nunjucks’s `safe` filter to preserve line breaks. Other interpolated fields are escaped.
 
-The existing `CNAME` file contains `scistitch.com`; keep it in place to retain the custom domain. DNS and HTTPS settings are managed separately from the page source.
+Professional Network members are independent collaborators, not employees. No profiles are supplied yet; add approved profiles in a follow-up change.
+
+## Build and publishing
+
+`npm run build` writes `_site/`. Generated files and `node_modules/` are ignored and must never be committed to `main` or feature branches. Static source assets remain versioned.
+
+Pull requests run `npm ci` and `npm test` with read-only repository permissions. After a push to upstream `main` (including a merged PR), CI:
+
+1. Builds and validates the site.
+2. Pushes only `_site/` contents to `gh-pages`, removing obsolete published files.
+3. Deploys that same output using GitHub’s official Pages actions.
+
+The publish job is restricted to `scistitch/scistitch.github.io` on `main`; fork builds and pull requests cannot publish. A manual workflow run on upstream `main` can retry publishing. Builds are reproducible through `package-lock.json`.
+
+### One-time migration setting
+
+**Before merging this migration, set Settings → Pages → Build and deployment → Source to GitHub Actions.** The current root-of-`main` publishing configuration will no longer work because source branches contain templates instead of generated HTML.
+
+The workflow updates `gh-pages` with `GITHUB_TOKEN` and deploys explicitly: GitHub does not trigger a branch-based Pages build from commits pushed using that token. No personal access token or deploy key is needed. Repository/organization policies must allow the publish job’s `contents: write`, `pages: write`, and `id-token: write` permissions, and any `github-pages` environment approval rules still apply.
+
+`CNAME` (`scistitch.com`) and `.nojekyll` are copied into both published outputs. Keep the existing custom domain and HTTPS settings; DNS changes are not required.
 
 ## License
 

@@ -219,3 +219,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Eleventy build output and dependencies
+/_site/
+/node_modules/

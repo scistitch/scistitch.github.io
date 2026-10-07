@@ -1,0 +1,14 @@
+<section class="contact container" aria-labelledby="contact-title">
+  <div class="contact-top">
+    <p class="eyebrow">{{ contact.eyebrow }}</p>
+    <span class="contact-stitch" aria-hidden="true">↗</span>
+  </div>
+  <div class="contact-main">
+    <h2 id="contact-title">{{ contact.title | safe }}</h2>
+    <div class="contact-action">
+      <p>{{ contact.description | safe }}</p>
+      <a class="button button-primary" href="{{ contact.href }}">{{ contact.label }} <span aria-hidden="true">↗</span></a>
+      <a class="email-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
+</section>

@@ -2,25 +2,28 @@
 
 ## Project
 
-SciStitch's public company website is served at **https://scistitch.com/** using GitHub Pages. It is plain HTML, CSS, and JavaScript, with no build step or application dependencies. Keep the site directly deployable from the repository root.
+SciStitch’s public company website is served at **https://scistitch.com/** using GitHub Pages. Eleventy and Nunjucks generate static HTML; no frontend framework or browser runtime is needed. Source stays on `main` and feature branches. Only generated public files are pushed to `gh-pages` by CI.
 
 ## Files and routes
 
-- `index.html` — homepage (`/`), expertise overview, approach, team introduction, and contact.
-- `projects/index.html` — selected past team contributions to OSL incubator projects and infrastructure, Infodengue, and LiteRev at `/projects/`.
-- `services/index.html` — services (`/services/`), capabilities and ways to work together.
-- `partnership/index.html` — partnership (`/partnership/`), Open Science Labs relationship and collaboration.
-- `network/index.html` — Professional Network at `/network/`, describing independent collaborators who may join specific projects according to fit and availability.
-- `about/index.html` — about (`/about/`), the team's origins at OSL, the Infodengue and LiteRev collaborations, independence as SciStitch, and a Team section.
-- `styles.css` — shared typography, layout, components, and responsive/accessibility rules.
-- `script.js` — progressive enhancements for mobile navigation and the copyright year.
-- `assets/` — local SVG illustrations, founder portrait, favicon, Manrope fonts, and upstream licenses.
-- `CNAME` — custom domain; preserve `scistitch.com`.
-- `.nojekyll` — tells GitHub Pages to serve the static files directly; preserve it.
-- `README.md` — setup, editing, preview, and publishing instructions.
-- `PLAN.md` — local working plan, deliberately ignored by Git. Never force-add it.
+- `src/index.njk` — homepage (`/`).
+- `src/services.njk` — capabilities and ways to work together (`/services/`).
+- `src/projects.njk` — past OSL, Infodengue, and LiteRev contributions (`/projects/`).
+- `src/partnership.njk` — OSL relationship and collaboration (`/partnership/`).
+- `src/network.njk` — independent professional collaborators (`/network/`).
+- `src/about.njk` — team history and founder profile (`/about/`).
+- `src/_includes/` — base layout, metadata, shared header/footer, navigation macro, wordmark, and contact section.
+- `src/_data/navigation.json` — shared navigation labels and routes.
+- `src/_data/site.json` — canonical site URL and shared business contact.
+- `styles.css`, `script.js`, `assets/` — static source assets, copied unchanged into the output.
+- `CNAME`, `.nojekyll`, `LICENSE` — preserved and copied to the public output.
+- `eleventy.config.js`, `package.json`, `package-lock.json` — build configuration and locked dependencies.
+- `scripts/check-site.js` — generated-site verification.
+- `.github/workflows/site.yml` — PR checks and upstream-main publishing.
+- `_site/` — generated output, ignored by Git. Never commit it.
+- `PLAN.md` — ignored local working plan. Never force-add it.
 
-Shared navigation and footers are written in each HTML file so they work without JavaScript. Update all six pages together when changing either. About navigation links point to `/about/`; the homepage `#about` section remains a short introduction. Use root-relative internal links and assets, directory routes with trailing slashes, and unique page titles, descriptions, canonical URLs, and Open Graph metadata.
+Change shared templates or data once rather than copying navigation, metadata, headers, footers, or contact markup into pages. About links point to `/about/`; the homepage `#about` remains a short introduction. Preserve all six routes, root-relative assets, unique metadata, and fragment targets. Page front matter supplies per-page contact text. Only trusted repository-authored HTML is rendered with `safe`; leave escaping enabled for other data.
 
 ## Brand and content
 
@@ -49,7 +52,7 @@ Shared navigation and footers are written in each HTML file so they work without
 
 - Preserve the minimalist visual system: warm white/paper, cobalt blue, dark ink, self-hosted Manrope, monospace labels, fine borders, generous spacing, and mathematical line art.
 - Reuse CSS variables and shared components; write new CSS and JavaScript in a readable style.
-- Prefer native HTML/CSS/SVG over dependencies, icon libraries, remote fonts, or stock imagery. Do not introduce a framework or build requirement without a concrete need.
+- Prefer native HTML/CSS/SVG over dependencies, icon libraries, remote fonts, or stock imagery. Use the established Eleventy/Nunjucks build; do not add frontend frameworks or additional build tools without a concrete need.
 - Keep content, navigation, illustrations, and contact links usable without JavaScript. Use JavaScript only for progressive enhancements.
 - Include a skip link, semantic landmarks, one clear `h1`, logical heading order, accessible names, visible keyboard focus, and `aria-current="page"` on the active navigation link.
 - Mobile navigation must expose its expanded state, close on Escape and link selection, and reset when returning to desktop. Do not leave hidden controls keyboard-focusable.
@@ -59,20 +62,30 @@ Shared navigation and footers are written in each HTML file so they work without
 
 ## Preview and verification
 
-Run from the repository root:
+Use Node.js 24 or newer. From the repository root:
 
 ```sh
-python -m http.server 8000
-node --check script.js
-git diff --check
-git check-ignore PLAN.md
-git ls-files PLAN.md
+npm ci
+npm test
+npm run dev
 ```
 
-Visit `/`, `/projects/`, `/services/`, `/partnership/`, `/network/`, and `/about/` on http://localhost:8000. Check desktop and mobile widths, local links and fragment targets, page metadata, menu keyboard behavior, current-page indicators, console errors, and no-JavaScript rendering. The last command above should print nothing. Use available browser tooling for screenshots and interaction checks; do not add runtime dependencies just to preview the site.
+Preview `/`, `/services/`, `/projects/`, `/partnership/`, `/network/`, and `/about/` at http://localhost:8080. Check desktop/mobile widths, keyboard navigation, reduced motion, forced colors, and no-JavaScript behavior when a browser is available. `npm test` builds and checks HTML, metadata, navigation, IDs, accessible references, links, fragments, copied assets, and the public output allowlist.
+
+Before committing:
+
+```sh
+git diff --check
+git check-ignore PLAN.md _site/index.html node_modules/
+git ls-files PLAN.md _site node_modules
+```
+
+The final command must print nothing. Do not add generated HTML to source branches or publish templates/configuration to `gh-pages`.
 
 ## Git and publishing
 
-Preserve unrelated user changes. `conda.yaml` was already untracked when this work began; it is not required to run the static site. `AGENTS.md` is intended as repository documentation; only `PLAN.md` is explicitly kept out of Git.
+Preserve unrelated changes, `conda.yaml`, licenses, the domain, and DNS configuration. Node dependencies are build-time only; retain the lockfile.
 
-GitHub Pages publishes the root of `main`. A push to `main` can publish the website: follow the user's requested scope before committing, pushing, or changing deployment settings. Do not alter DNS, the custom domain, or licensing as part of routine page edits.
+PRs build and validate with read-only permissions. Upstream `main` builds and publishes only `_site/` to `gh-pages`, then deploys the same files through the official GitHub Pages actions. Fork builds and PRs never publish. The deployment uses `GITHUB_TOKEN`; its branch pushes do not trigger a branch-based Pages build, so the explicit Pages deployment is required.
+
+For the initial migration, the maintainer must set Settings → Pages → Source to **GitHub Actions** before merging. Do not assume that committing the workflow changes the repository’s publishing settings. Preserve `CNAME` and `.nojekyll` in the output; repository and environment policies govern deployment permissions and approvals.
