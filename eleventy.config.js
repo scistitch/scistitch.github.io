@@ -1,6 +1,6 @@
 export default function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({ autoescape: true });
-  for (const path of ["assets", "styles.css", "script.js", "CNAME", ".nojekyll", "LICENSE"]) {
+  for (const path of ["assets", "images", "styles.css", "script.js", "CNAME", ".nojekyll", "LICENSE"]) {
     eleventyConfig.addPassthroughCopy(path);
   }
   return {

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "wordmark-color",
+    "width": 760,
+    "height": 200,
+    "label": "Color wordmark",
+    "background": "#f7f8f5",
+    "details": "Transparent \u00b7 1520 \u00d7 400 PNG"
+  },
+  {
+    "name": "wordmark-black",
+    "width": 760,
+    "height": 200,
+    "label": "Black wordmark",
+    "background": "#f7f8f5",
+    "details": "Transparent \u00b7 1520 \u00d7 400 PNG"
+  },
+  {
+    "name": "wordmark-white",
+    "width": 760,
+    "height": 200,
+    "label": "White wordmark",
+    "background": "#142027",
+    "details": "Transparent \u00b7 1520 \u00d7 400 PNG"
+  },
+  {
+    "name": "symbol-blue",
+    "width": 256,
+    "height": 256,
+    "label": "Blue symbol",
+    "background": "#f7f8f5",
+    "details": "Transparent \u00b7 1024 \u00d7 1024 PNG"
+  },
+  {
+    "name": "symbol-black",
+    "width": 256,
+    "height": 256,
+    "label": "Black symbol",
+    "background": "#f7f8f5",
+    "details": "Transparent \u00b7 1024 \u00d7 1024 PNG"
+  },
+  {
+    "name": "symbol-white",
+    "width": 256,
+    "height": 256,
+    "label": "White symbol",
+    "background": "#142027",
+    "details": "Transparent \u00b7 1024 \u00d7 1024 PNG"
+  },
+  {
+    "name": "avatar-blue",
+    "width": 1024,
+    "height": 1024,
+    "label": "Blue social avatar",
+    "background": "#f7f8f5",
+    "details": "Square \u00b7 1024 \u00d7 1024 PNG"
+  },
+  {
+    "name": "avatar-light",
+    "width": 1024,
+    "height": 1024,
+    "label": "Light social avatar",
+    "background": "#f7f8f5",
+    "details": "Square \u00b7 1024 \u00d7 1024 PNG"
+  },
+  {
+    "name": "social-banner",
+    "width": 1200,
+    "height": 630,
+    "label": "Sharing banner",
+    "background": "#f7f8f5",
+    "details": "Landscape \u00b7 1200 \u00d7 630 PNG"
+  }
+]
