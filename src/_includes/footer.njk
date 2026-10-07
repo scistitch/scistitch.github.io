@@ -1,0 +1,9 @@
+{% from "navigation.njk" import navigationLinks %}
+    <footer class="site-footer container">
+      {% set footerWordmark = true %}{% include "wordmark.njk" %}
+      <nav class="footer-nav" aria-label="Footer navigation">
+          {{ navigationLinks(navigation, page.url) }}
+        </nav>
+      <span class="copyright">© <span id="year">2026</span> SciStitch</span>
+      <a class="back-top" href="#" aria-label="Back to top">↑</a>
+    </footer>

@@ -1,0 +1,28 @@
+{% from "navigation.njk" import navigationLinks %}
+    <header class="site-header">
+      <div class="container header-inner">
+        {% set footerWordmark = false %}{% include "wordmark.njk" %}
+        <nav class="desktop-nav" aria-label="Main navigation">
+          {{ navigationLinks(navigation, page.url) }}
+        </nav>
+        <a
+          class="header-contact"
+          href="mailto:{{ site.email }}?subject={{ site.contactSubject }}"
+          >Let’s talk <span aria-hidden="true">↗</span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open navigation"
+          hidden
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+          {{ navigationLinks(navigation, page.url, true) }}
+          <a href="mailto:{{ site.email }}?subject={{ site.contactSubject }}">Let’s talk <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>

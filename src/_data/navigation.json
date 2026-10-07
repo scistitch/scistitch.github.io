@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Projects",
+    "url": "/projects/"
+  },
+  {
+    "label": "Services",
+    "url": "/services/"
+  },
+  {
+    "label": "Partnership",
+    "url": "/partnership/"
+  },
+  {
+    "label": "Network",
+    "url": "/network/"
+  },
+  {
+    "label": "About",
+    "url": "/about/"
+  }
+]
