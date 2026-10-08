@@ -1,13 +1,16 @@
-<article class="team-member" id="{{ professional.id }}" aria-labelledby="{{ professional.id }}-name">
-  <img class="team-portrait" src="{{ professional.photo }}"
+<article class="professional-card" id="{{ professional.id }}" aria-labelledby="{{ professional.id }}-name">
+  <header class="professional-header">
+  <img class="professional-portrait" src="{{ professional.photo }}"
     width="460" height="460" alt="{{ professional.name }}"
     loading="lazy" decoding="async" />
-  <div class="team-member-copy">
+  <div class="professional-heading">
     <h3 id="{{ professional.id }}-name">{{ professional.name }}</h3>
-    <p class="team-role">{{ professional.headline }}</p>
-    <p>{{ professional.bio }}</p>
+    <p class="professional-role">{{ professional.headline }}</p>
+  </div>
+  </header>
+  <p class="professional-bio">{{ professional.bio }}</p>
     {% if professional.website or professional.github or professional.linkedin %}
-    <div class="inline-links">
+    <div class="professional-links">
       {% if professional.website %}
       <a href="{{ professional.website }}" aria-label="{{ professional.name }}’s website"
         >Website <span aria-hidden="true">↗</span></a
@@ -25,5 +28,4 @@
       {% endif %}
     </div>
     {% endif %}
-  </div>
 </article>
