@@ -54,7 +54,7 @@ contact: {"eyebrow": "Start with your project", "title": "Let’s explore<br />t
             <h2 id="professionals-title">Collaborating professionals</h2>
           </div>
           <div class="team-members">
-            {% for professional in professionals %}
+            {% for professional in professionals | sort(attribute="name") %}
               {% include "professional-card.njk" %}
             {% endfor %}
           </div>
