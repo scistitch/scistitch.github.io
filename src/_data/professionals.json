@@ -25,6 +25,14 @@
     "linkedin": "https://www.linkedin.com/in/luabida/"
   },
   {
+    "id": "sai-sanjay-kottakota",
+    "name": "Sai Sanjay Kottakota",
+    "headline": "Software development engineer · Cloud-native open-source contributor",
+    "bio": "Sai is a Software Development Engineer 1 at Murf AI and a cloud-native open-source contributor. He is an LFX 2026 mentee working on CNCF kube-burner, a GSoC 2025 contributor, and a GSoC 2026 mentor at Open Science Labs. His interests include performance engineering, Kubernetes systems, developer tooling, and Wayland-based remote desktop protocols.",
+    "photo": "/assets/sai-sanjay-kottakota.webp",
+    "linkedin": "https://www.linkedin.com/in/sanjay7178/"
+  },
+  {
     "id": "sandro-loch",
     "name": "Sandro Loch",
     "headline": "Web developer · Open-source contributor",
