@@ -48,12 +48,12 @@ contact: {"eyebrow": "Start with your project", "title": "Let’s explore<br />t
       </section>
 
       <section class="team-section section-pad" aria-labelledby="professionals-title">
-        <div class="container section-grid">
+        <div class="container network-directory">
           <div class="section-intro">
             <p class="eyebrow section-label"><span>01 /</span> Our network</p>
             <h2 id="professionals-title">Collaborating professionals</h2>
           </div>
-          <div class="team-members">
+          <div class="professional-grid">
             {% for professional in professionals | sort(attribute="name") %}
               {% include "professional-card.njk" %}
             {% endfor %}
