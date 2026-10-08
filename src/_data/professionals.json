@@ -7,6 +7,14 @@
     "photo": "/assets/aniket-kumar.jpg"
   },
   {
+    "id": "ivan-ogasawara",
+    "name": "Ivan Ogasawara",
+    "headline": "Cofounder · Research software engineer",
+    "bio": "Ivan is SciStitch’s cofounder and OSL’s founder and executive director. A research software engineer, he is the author of Makim and Sugar.",
+    "photo": "/assets/ivan-ogasawara.jpg",
+    "website": "https://ivanogasawara.com/"
+  },
+  {
     "id": "john-ever-vino-duran",
     "name": "John Ever Vino Durán",
     "headline": "Full-stack software developer · Environmental engineer",
@@ -23,6 +31,14 @@
     "photo": "/assets/lua-vacaro.jpg",
     "github": "https://github.com/luabida",
     "linkedin": "https://www.linkedin.com/in/luabida/"
+  },
+  {
+    "id": "ricky-macharm",
+    "name": "Ricky Sambo Macharm",
+    "headline": "Cofounder · Data scientist & AI/ML engineer",
+    "bio": "Ricky is SciStitch’s cofounder, with experience in AI, data engineering, and international development across Africa and Europe. His work spans public health, data pipelines, and technical education. He contributes to Masakhane’s open-source research on African languages and holds a master’s degree in financial engineering.",
+    "photo": "/assets/ricky-macharm.jpg",
+    "linkedin": "https://www.linkedin.com/in/theafricanquant/"
   },
   {
     "id": "sai-sanjay-kottakota",
