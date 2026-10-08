@@ -15,5 +15,12 @@
     "photo": "/assets/lua-vacaro.jpg",
     "github": "https://github.com/luabida",
     "linkedin": "https://www.linkedin.com/in/luabida/"
+  },
+  {
+    "id": "aniket-kumar",
+    "name": "Aniket Kumar",
+    "headline": "Software engineer · Open-source contributor",
+    "bio": "Aniket builds developer tooling, compiler and AST extensions, and applied machine learning systems. A long-time core contributor and mentor at HiPerHealth and a Google Summer of Code mentor, he contributes to projects including Rust-based parsers for VS Code extensions and AST implementations in astx. His work also spans published research in computer vision, biometric security, and ensemble predictive modeling, plus technical writing on LLM fine-tuning, JAX/Flax, and developer workflows.",
+    "photo": "/assets/aniket-kumar.jpg"
   }
 ]

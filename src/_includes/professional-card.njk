@@ -6,15 +6,19 @@
     <h3 id="{{ professional.id }}-name">{{ professional.name }}</h3>
     <p class="team-role">{{ professional.headline }}</p>
     <p>{{ professional.bio }}</p>
+    {% if professional.github or professional.linkedin %}
     <div class="inline-links">
       {% if professional.github %}
       <a href="{{ professional.github }}" aria-label="{{ professional.name }} on GitHub"
         >GitHub <span aria-hidden="true">↗</span></a
       >
       {% endif %}
+      {% if professional.linkedin %}
       <a href="{{ professional.linkedin }}" aria-label="{{ professional.name }} on LinkedIn"
         >LinkedIn <span aria-hidden="true">↗</span></a
       >
+      {% endif %}
     </div>
+    {% endif %}
   </div>
 </article>
