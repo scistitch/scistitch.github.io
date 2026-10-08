@@ -1,11 +1,19 @@
 [
   {
-    "id": "sandro-loch",
-    "name": "Sandro Loch",
-    "headline": "Web developer · Open-source contributor",
-    "bio": "Sandro is a web developer and open-source contributor with experience in Python, Django, Docker, and Conda. He brings that background to SciStitch’s network as an independent collaborator.",
-    "photo": "/assets/sandro-loch.png",
-    "linkedin": "https://www.linkedin.com/in/esloch"
+    "id": "aniket-kumar",
+    "name": "Aniket Kumar",
+    "headline": "Software engineer · Open-source contributor",
+    "bio": "Aniket builds developer tooling, compiler and AST extensions, and applied machine learning systems. A long-time core contributor and mentor at HiPerHealth and a Google Summer of Code mentor, he contributes to projects including Rust-based parsers for VS Code extensions and AST implementations in astx. His work also spans published research in computer vision, biometric security, and ensemble predictive modeling, plus technical writing on LLM fine-tuning, JAX/Flax, and developer workflows.",
+    "photo": "/assets/aniket-kumar.jpg"
+  },
+  {
+    "id": "john-ever-vino-duran",
+    "name": "John Ever Vino Durán",
+    "headline": "Full-stack software developer · Environmental engineer",
+    "bio": "John is a full-stack software developer with over three years of experience building and deploying production systems with Python, Django, and JavaScript. His work spans data analysis, web scraping, and machine learning, including fine-tuning models for legal text classification. An environmental engineer with a background in bioprocess and mathematical modeling, he is also an active open-source mentor and project coordinator.",
+    "photo": "/assets/john-ever-vino-duran.jpg",
+    "linkedin": "https://www.linkedin.com/in/john-ever-vino-duran-86aa44224/",
+    "github": "https://github.com/EverVino"
   },
   {
     "id": "lua-vacaro",
@@ -17,10 +25,19 @@
     "linkedin": "https://www.linkedin.com/in/luabida/"
   },
   {
-    "id": "aniket-kumar",
-    "name": "Aniket Kumar",
-    "headline": "Software engineer · Open-source contributor",
-    "bio": "Aniket builds developer tooling, compiler and AST extensions, and applied machine learning systems. A long-time core contributor and mentor at HiPerHealth and a Google Summer of Code mentor, he contributes to projects including Rust-based parsers for VS Code extensions and AST implementations in astx. His work also spans published research in computer vision, biometric security, and ensemble predictive modeling, plus technical writing on LLM fine-tuning, JAX/Flax, and developer workflows.",
-    "photo": "/assets/aniket-kumar.jpg"
+    "id": "sai-sanjay-kottakota",
+    "name": "Sai Sanjay Kottakota",
+    "headline": "Software development engineer · Cloud-native open-source contributor",
+    "bio": "Sai is a Software Development Engineer 1 at Murf AI and a cloud-native open-source contributor. He is an LFX 2026 mentee working on CNCF kube-burner, a GSoC 2025 contributor, and a GSoC 2026 mentor at Open Science Labs. His interests include performance engineering, Kubernetes systems, developer tooling, and Wayland-based remote desktop protocols.",
+    "photo": "/assets/sai-sanjay-kottakota.webp",
+    "linkedin": "https://www.linkedin.com/in/sanjay7178/"
+  },
+  {
+    "id": "sandro-loch",
+    "name": "Sandro Loch",
+    "headline": "Web developer · Open-source contributor",
+    "bio": "Sandro is a web developer and open-source contributor with experience in Python, Django, Docker, and Conda. He brings that background to SciStitch’s network as an independent collaborator.",
+    "photo": "/assets/sandro-loch.png",
+    "linkedin": "https://www.linkedin.com/in/esloch"
   }
 ]
