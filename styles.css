@@ -2147,3 +2147,111 @@ button {
     background: LinkText;
   }
 }
+
+/* Professional directory: compact identity, full-width biography. */
+.network-directory > .section-intro {
+  margin-bottom: 36px;
+}
+
+.professional-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.professional-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+}
+
+.professional-header {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.professional-portrait {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
+
+.professional-heading h3 {
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.professional-role {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--blue);
+}
+
+.professional-bio {
+  margin-top: 22px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.professional-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.professional-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--blue);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 850px) {
+  .professional-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .network-directory > .section-intro {
+    margin-bottom: 24px;
+  }
+  .professional-grid {
+    gap: 18px;
+  }
+  .professional-card {
+    padding: 20px;
+  }
+  .professional-header {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .professional-portrait {
+    width: 64px;
+    height: 64px;
+  }
+  .professional-heading h3 {
+    font-size: 20px;
+  }
+}
