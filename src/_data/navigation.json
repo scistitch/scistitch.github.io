@@ -1,11 +1,11 @@
 [
   {
-    "label": "Projects",
-    "url": "/projects/"
-  },
-  {
     "label": "Services",
     "url": "/services/"
+  },
+  {
+    "label": "Our work",
+    "url": "/projects/"
   },
   {
     "label": "Partnership",

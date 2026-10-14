@@ -1,15 +1,15 @@
 ---
 layout: "base.njk"
 permalink: "/projects/"
-title: "Projects — SciStitch"
+title: "Selected work and case studies — SciStitch"
 description: "Past contributions by the SciStitch team: OSL incubator projects and infrastructure, Infodengue, and LiteRev."
-ogTitle: "Projects — SciStitch"
+ogTitle: "Selected work and case studies — SciStitch"
 ogDescription: "Past contributions by the SciStitch team: OSL incubator projects and infrastructure, Infodengue, and LiteRev."
 contact: {"eyebrow": "Have a project in mind?", "title": "What could we<br />build together?", "description": "Tell us your goal, current challenge, and relevant project links.", "href": "mailto:connect@scistitch.com?subject=A%20project%20for%20SciStitch", "label": "Discuss your project"}
 ---
       <section class="hero page-hero container" aria-labelledby="hero-title">
         <p class="hero-eyebrow eyebrow">
-          <span class="status-dot" aria-hidden="true"></span> Selected projects
+          <span class="status-dot" aria-hidden="true"></span> Selected work / Case studies
         </p>
         <div class="hero-grid">
           <div class="hero-copy">
@@ -100,67 +100,103 @@ contact: {"eyebrow": "Have a project in mind?", "title": "What could we<br />bui
               </div>
             </article>
           </div>
-          <div class="section-note">
-            <span class="note-symbol" aria-hidden="true">+</span>
-            <p>
-              We created and maintained OSL’s technical infrastructure: bots,
-              continuous integration, websites, plugins, and DevOps workflows,
-              alongside smaller support tools used across its projects.
-            </p>
-            <a class="text-link" href="https://github.com/OpenScienceLabs"
-              >OSL on GitHub <span aria-hidden="true">↗</span></a
-            >
-          </div>
+          <dl class="case-facts case-facts-wide" aria-label="Open Science Labs contribution summary">
+            <div>
+              <dt>Project context</dt>
+              <dd>OSL supports open-source research tools and the technical
+                infrastructure used by its project community.</dd>
+            </div>
+            <div>
+              <dt>Our team's contributions</dt>
+              <dd>Development and maintenance of tools, bots, continuous integration,
+                websites, plugins, DevOps workflows, and support infrastructure.</dd>
+            </div>
+            <div>
+              <dt>Public evidence</dt>
+              <dd><a href="https://github.com/OpenScienceLabs">
+                Explore OSL repositories <span aria-hidden="true">↗</span></a></dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="section-pad" id="infodengue" aria-labelledby="infodengue-title">
+      <section class="case-study-section section-pad" id="infodengue" aria-labelledby="infodengue-title">
         <div class="container section-grid">
           <div class="section-intro">
             <p class="eyebrow section-label"><span>02 /</span> Public health</p>
             <h2 id="infodengue-title">Infodengue</h2>
             <p>An open-source project monitoring mosquito-borne diseases in Brazil.</p>
-            <a class="text-link" href="https://info.dengue.mat.br/"
-              >Explore Infodengue <span aria-hidden="true">↗</span></a
-            >
+            <a class="text-link" href="https://info.dengue.mat.br/">
+              Visit Infodengue <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="about-copy">
-            <p class="about-lead">Data visualization, web development, and DevOps.</p>
-            <p>
-              Our team contributed to Infodengue through work on data
-              visualization, its web platform, and development and deployment
-              infrastructure. The collaboration began at OSL; some contributors
-              were later contracted directly by the project.
+          <div class="case-study-detail">
+            <p class="eyebrow case-provenance">Past OSL collaboration · Team experience</p>
+            <dl class="case-facts">
+              <div>
+                <dt>Project context</dt>
+                <dd>A public-health monitoring platform using data and web tools
+                  to make information on mosquito-borne diseases accessible.</dd>
+              </div>
+              <div>
+                <dt>What our team contributed</dt>
+                <dd>Data visualization, development of the web platform,
+                  and development and deployment infrastructure.</dd>
+              </div>
+              <div>
+                <dt>Public evidence</dt>
+                <dd>
+                  <a href="https://info.dengue.mat.br/">Project website <span aria-hidden="true">↗</span></a>
+                  <a href="https://info.dengue.mat.br/informacoes/">Project information <span aria-hidden="true">↗</span></a>
+                </dd>
+              </div>
+            </dl>
+            <p class="case-context-note">
+              This collaboration began at Open Science Labs; some contributors were later
+              contracted directly by Infodengue. It is prior team experience, not a
+              SciStitch client engagement.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section-pad" id="literev" aria-labelledby="literev-title">
+      <section class="case-study-section section-pad" id="literev" aria-labelledby="literev-title">
         <div class="container section-grid">
           <div class="section-intro">
             <p class="eyebrow section-label"><span>03 /</span> Literature review</p>
             <h2 id="literev-title">LiteRev</h2>
-            <p>
-              A tool for finding and reviewing scientific literature, connected
-              to The GRAPH Network and research at the University of Geneva.
-            </p>
-            <a class="text-link" href="https://literev.unige.ch/"
-              >Explore LiteRev <span aria-hidden="true">↗</span></a
-            >
+            <p>A tool for finding and reviewing scientific literature, connected
+              to The GRAPH Network and research at the University of Geneva.</p>
+            <a class="text-link" href="https://literev.unige.ch/">
+              Visit LiteRev <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="about-copy">
-            <p class="about-lead">Technical leadership across the research software stack.</p>
-            <p>
-              In a team formed at OSL, we contributed technical leadership
-              and development across LiteRev’s data workflows, application,
-              and infrastructure.
+          <div class="case-study-detail">
+            <p class="eyebrow case-provenance">Past OSL collaboration · Team experience</p>
+            <dl class="case-facts">
+              <div>
+                <dt>Project context</dt>
+                <dd>Supporting the discovery and review of scientific literature
+                  with research-oriented data processing and search workflows.</dd>
+              </div>
+              <div>
+                <dt>What our team contributed</dt>
+                <dd>Technical leadership, AI, clustering, data processing,
+                  benchmarking, Celery background tasks, Elasticsearch search,
+                  web development, and DevOps.</dd>
+              </div>
+              <div>
+                <dt>Public evidence</dt>
+                <dd>
+                  <a href="https://literev.unige.ch/">Project website <span aria-hidden="true">↗</span></a>
+                  <a href="https://thegraphnetwork.org/">The GRAPH Network <span aria-hidden="true">↗</span></a>
+                </dd>
+              </div>
+            </dl>
+            <p class="case-context-note">
+              This work was carried out by a team formed at Open Science Labs.
+              The case study describes that team's earlier contributions.
             </p>
-            <ul class="capability-details">
-              <li>AI, clustering, data processing, and benchmarking</li>
-              <li>Background task orchestration with Celery and search with Elasticsearch</li>
-              <li>Web development and DevOps</li>
-            </ul>
           </div>
         </div>
       </section>

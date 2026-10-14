@@ -2,5 +2,6 @@
   "url": "https://scistitch.com",
   "email": "connect@scistitch.com",
   "linkedin": "https://www.linkedin.com/company/scistitch/",
-  "contactSubject": "Let%E2%80%99s%20talk%20SciStitch"
+  "contactSubject": "Let%E2%80%99s%20talk%20SciStitch",
+  "inquiryMailto": "mailto:connect@scistitch.com?subject=SciStitch%20project%20inquiry&body=Hello%20SciStitch%2C%0A%0AOrganization%20(optional)%3A%20%0AProject%20goal%20or%20challenge%3A%20%0ARelevant%20data%20or%20tools%3A%20%0ATimeline%20(if%20known)%3A%20%0ABudget%20(if%20known)%3A%20%0A%0A"
 }
