@@ -2267,3 +2267,298 @@ button {
     font-size: clamp(35px, 9vw, 54px);
   }
 }
+
+/* Selected work: readable previews, without treating OSL work as SciStitch contracts. */
+.featured-work {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.work-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.work-preview {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-top: 1px solid var(--ink);
+  padding-top: 22px;
+}
+
+.work-preview-type {
+  font-size: 10px;
+  color: var(--blue);
+}
+
+.work-preview h3 {
+  margin-top: 20px;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.work-preview > p:not(.work-preview-type) {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.work-preview .text-link {
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.featured-work-all {
+  margin-top: 38px;
+}
+
+/* Case study details: transparent attribution, contributions and public evidence. */
+.case-study-section {
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 24px;
+}
+
+.case-study-detail {
+  min-width: 0;
+}
+
+.case-provenance {
+  margin-bottom: 17px;
+  color: var(--blue);
+  font-size: 11px;
+}
+
+.case-facts {
+  margin: 0;
+  padding: 0;
+}
+
+.case-facts > div {
+  border-top: 1px solid var(--line);
+  padding: 17px 0 20px;
+}
+
+.case-facts dt {
+  margin-bottom: 9px;
+  color: var(--blue);
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.case-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.case-facts dd a {
+  display: inline-flex;
+  margin-right: 15px;
+  color: var(--blue);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.case-facts dd a:hover {
+  text-decoration: underline;
+}
+
+.case-facts-wide {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.case-context-note {
+  margin-top: 18px;
+  max-width: 660px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* Email-first inquiry journey; no nonfunctional form or client-data storage. */
+.contact-guidance {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-guidance:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.inquiry-page {
+  border-top: 1px solid var(--line);
+}
+
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(35px, 6vw, 100px);
+}
+
+.inquiry-intro h1 {
+  max-width: 730px;
+  font-size: clamp(42px, 5vw, 74px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.06em;
+}
+
+.inquiry-intro h1 span {
+  color: var(--blue);
+}
+
+.inquiry-lead {
+  max-width: 530px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.inquiry-intro .email-link {
+  margin-top: 17px;
+}
+
+.inquiry-brief {
+  padding: 29px 34px 34px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.inquiry-brief > .eyebrow {
+  color: var(--blue);
+}
+
+.inquiry-brief h2 {
+  margin-top: 14px;
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 1.23;
+  letter-spacing: -0.04em;
+}
+
+.inquiry-steps {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+}
+
+.inquiry-steps li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  padding: 17px 0;
+}
+
+.inquiry-steps li > .eyebrow {
+  color: var(--blue);
+}
+
+.inquiry-steps h3 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.inquiry-steps p,
+.inquiry-privacy {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.inquiry-steps p {
+  margin-top: 7px;
+}
+
+.inquiry-privacy {
+  margin-top: 15px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.inquiry-next {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  margin-top: 50px;
+  padding-top: 26px;
+}
+
+.inquiry-next .eyebrow {
+  color: var(--blue);
+}
+
+.inquiry-next > p:last-child {
+  max-width: 810px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .work-preview-grid,
+  .case-facts-wide {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .inquiry-grid,
+  .inquiry-next {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .inquiry-intro h1 {
+    max-width: 650px;
+  }
+
+  .inquiry-brief {
+    max-width: 740px;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-preview-grid {
+    gap: 33px;
+  }
+
+  .work-preview h3 {
+    font-size: 23px;
+  }
+
+  .inquiry-intro h1 {
+    font-size: clamp(37px, 9.3vw, 52px);
+  }
+
+  .inquiry-lead {
+    font-size: 16px;
+  }
+
+  .inquiry-brief {
+    padding: 24px 22px;
+  }
+
+  .inquiry-next {
+    margin-top: 35px;
+  }
+}

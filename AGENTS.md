@@ -11,6 +11,7 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `src/projects.njk` — past OSL, Infodengue, and LiteRev contributions (`/projects/`).
 - `src/partnership.njk` — OSL relationship and collaboration (`/partnership/`).
 - `src/network.njk` — independent professional collaborators (`/network/`).
+- `src/contact.njk` — inquiry guidance and a working email action (`/contact/`).
 - `src/about.njk` — team history and cofounder profiles (`/about/`).
 - `src/_includes/` — base layout, metadata, shared header/footer, navigation macro, wordmark, and contact section.
 - `src/_data/navigation.json` — shared navigation labels and routes.
@@ -23,7 +24,7 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `_site/` — generated output, ignored by Git. Never commit it.
 - `PLAN.md` — ignored local working plan. Never force-add it.
 
-Change shared templates or data once rather than copying navigation, metadata, headers, footers, or contact markup into pages. About links point to `/about/`; the homepage `#about` remains a short introduction. Preserve all six routes, root-relative assets, unique metadata, and fragment targets. Page front matter supplies per-page contact text. Only trusted repository-authored HTML is rendered with `safe`; leave escaping enabled for other data.
+Change shared templates or data once rather than copying navigation, metadata, headers, footers, or contact markup into pages. About links point to `/about/`; the homepage `#about` remains a short introduction. Preserve all seven public content routes, root-relative assets, unique metadata, and fragment targets. Page front matter supplies per-page contact text. Only trusted repository-authored HTML is rendered with `safe`; leave escaping enabled for other data.
 
 ## Brand and content
 
