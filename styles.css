@@ -2316,75 +2316,16 @@ button {
   margin-top: 38px;
 }
 
-/* Case study details: transparent attribution, contributions and public evidence. */
-.case-study-section {
+/* One shared context for earlier Open Science Labs work. */
+.previous-experience {
+  background: var(--white);
   border-top: 1px solid var(--line);
   scroll-margin-top: 24px;
 }
 
-.case-study-detail {
-  min-width: 0;
-}
-
-.case-provenance {
-  margin-bottom: 17px;
-  color: var(--blue);
-  font-size: 11px;
-}
-
-.case-facts {
-  margin: 0;
-  padding: 0;
-}
-
-.case-facts > div {
+.case-study-section {
   border-top: 1px solid var(--line);
-  padding: 17px 0 20px;
-}
-
-.case-facts dt {
-  margin-bottom: 9px;
-  color: var(--blue);
-  font-family: var(--mono);
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 1.6;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-}
-
-.case-facts dd {
-  margin: 0;
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.case-facts dd a {
-  display: inline-flex;
-  margin-right: 15px;
-  color: var(--blue);
-  font-weight: 600;
-  text-underline-offset: 4px;
-}
-
-.case-facts dd a:hover {
-  text-decoration: underline;
-}
-
-.case-facts-wide {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
-  margin-top: 35px;
-}
-
-.case-context-note {
-  margin-top: 18px;
-  max-width: 660px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.75;
+  scroll-margin-top: 24px;
 }
 
 /* Email-first inquiry journey; no nonfunctional form or client-data storage. */
