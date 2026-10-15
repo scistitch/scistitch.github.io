@@ -17,11 +17,12 @@ Open http://localhost:8080. Eleventy rebuilds when templates or assets change.
 npm test
 ```
 
-This builds the site and checks generated HTML, page metadata, navigation, local links, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all six routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
+This builds the site and checks generated HTML, page metadata, navigation, local links, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all seven content routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
 
 ## Editing
 
 - `src/index.njk`, `src/services.njk`, `src/projects.njk`, `src/partnership.njk`, `src/network.njk`, and `src/about.njk`: page-specific content and front matter.
+- `src/contact.njk`: project inquiry guidance and an email link with a suggested brief (no submission form or stored inquiry data).
 - `src/_includes/base.njk`: document layout.
 - `src/_includes/head.njk`, `header.njk`, `footer.njk`, `navigation.njk`, `wordmark.njk`, and `contact.njk`: shared page elements. Navigation is rendered from one shared macro; contact text is supplied by each page’s front matter.
 - `src/_data/navigation.json`: navigation labels and routes, used by every navigation surface.

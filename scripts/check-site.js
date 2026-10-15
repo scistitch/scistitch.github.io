@@ -6,7 +6,7 @@ import { parse } from "parse5";
 const output = "_site";
 const navigation = JSON.parse(readFileSync("src/_data/navigation.json", "utf8"));
 const site = JSON.parse(readFileSync("src/_data/site.json", "utf8"));
-const routes = ["/", ...navigation.map((item) => item.url), "/images/logo/"];
+const routes = ["/", ...navigation.map((item) => item.url), "/contact/", "/images/logo/"];
 const pages = new Map();
 function walk(node, visit) {
   visit(node);
@@ -45,7 +45,11 @@ for (const route of routes) {
     walk(nav.node, (node) => {
       if (node.tagName === "a") links.push(Object.fromEntries(node.attrs.map((a) => [a.name, a.value])));
     });
-    assert.deepEqual(links.filter((a) => a.href.startsWith("/")).map((a) => a.href), navigation.map((n) => n.url), `${route}: navigation routes`);
+    const expectedInternalLinks = [
+      ...navigation.map((n) => n.url),
+      ...(nav.attrs["aria-label"] === "Mobile navigation" ? ["/contact/"] : []),
+    ];
+    assert.deepEqual(links.filter((a) => a.href.startsWith("/")).map((a) => a.href), expectedInternalLinks, `${route}: navigation routes`);
     assert.deepEqual(links.filter((a) => a["aria-current"] === "page").map((a) => a.href), navigation.some((item) => item.url === route) ? [route] : [], `${route}: active navigation`);
   }
   assert(!readFileSync(join(output, filename), "utf8").match(/\{%|\{\{/), `${route}: unrendered template`);
@@ -79,5 +83,18 @@ assert.deepEqual(files(output).sort(), expectedFiles.sort(), "Output must contai
 for (const path of expectedFiles.filter((f) => !f.endsWith(".html"))) {
   assert(readFileSync(join(output, path)).equals(readFileSync(path)), `${path}: passthrough file changed`);
 }
+const homepageHrefs = pages.get("/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
+const aboutHrefs = pages.get("/about/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
+assert(homepageHrefs.includes("/projects/"), "homepage missing experience link");
+assert(aboutHrefs.includes("/projects/"), "about page missing experience link");
+assert(pages.get("/about/").ids.includes("our-story"), "about page missing story anchor");
+for (const project of ["osl-projects", "infodengue", "literev"]) {
+  assert(pages.get("/projects/").ids.includes(project), `missing ${project} experience section`);
+  assert(!homepageHrefs.includes(`/projects/#${project}`), `homepage repeats ${project} portfolio content`);
+  assert(!aboutHrefs.includes(`/projects/#${project}`), `about page repeats ${project} portfolio navigation`);
+}
+assert(homepageHrefs.includes("/contact/"), "homepage missing inquiry CTA");
+const inquiryHrefs = pages.get("/contact/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
+assert(inquiryHrefs.some((href) => href.startsWith("mailto:connect@scistitch.com?subject=")), "contact page missing email action");
 assert.equal(readFileSync(join(output, "CNAME"), "utf8").trim(), "scistitch.com");
 console.log(`Checked ${pages.size} pages: HTML, metadata, navigation, references, links, and public output.`);
