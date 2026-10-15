@@ -95,7 +95,9 @@ const expectedFiles = [
   "robots.txt", "sitemap.xml",
 ];
 assert.deepEqual(files(output).sort(), expectedFiles.sort(), "Output must contain only public pages and assets");
-for (const path of expectedFiles.filter((f) => !f.endsWith(".html"))) {
+// Generated crawler files have no matching source file at the repository root.
+const generatedFiles = new Set(["robots.txt", "sitemap.xml"]);
+for (const path of expectedFiles.filter((f) => !f.endsWith(".html") && !generatedFiles.has(f))) {
   assert(readFileSync(join(output, path)).equals(readFileSync(path)), `${path}: passthrough file changed`);
 }
 const homepageHrefs = pages.get("/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);

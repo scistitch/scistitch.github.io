@@ -45,16 +45,23 @@ Professional Network profiles are managed in `src/_data/professionals.json`; mem
 Pull requests run `npm ci` and `npm test` with read-only repository permissions. After a push to upstream `main` (including a merged PR), CI:
 
 1. Builds and validates the site.
-2. Pushes only `_site/` contents to `gh-pages`, removing obsolete published files.
-3. Deploys that same output using GitHub’s official Pages actions.
+2. Writes only generated `_site/` files into the `gh-pages` branch, including `CNAME` and `.nojekyll`.
+3. Uploads the same generated output as the GitHub Pages Actions artifact.
+4. Deploys that artifact via the official Pages action and verifies that the homepage responds successfully.
 
 The publish job is restricted to `scistitch/scistitch.github.io` on `main`; fork builds and pull requests cannot publish. A manual workflow run on upstream `main` can retry publishing. Builds are reproducible through `package-lock.json`.
 
-### Deployment configuration
+### Required GitHub Pages setting
 
-GitHub Pages should use **GitHub Actions** as its build and deployment source. Eleventy templates stay on `main` and CI deploys the generated output.
+Under **Settings → Pages → Build and deployment**, choose **Source: GitHub Actions**. The `main` branch contains Eleventy templates, not a root `index.html`. Publishing the repository root from `main` produces a 404 website even if GitHub's automatic "Pages Build and Deployment" workflow reports success.
 
-The workflow updates `gh-pages` with `GITHUB_TOKEN` and deploys explicitly: GitHub does not trigger a branch-based Pages build from commits pushed using that token. No personal access token or deploy key is needed. Repository/organization policies must allow the publish job’s `contents: write`, `pages: write`, and `id-token: write` permissions, and any `github-pages` environment approval rules still apply.
+The custom workflow in `.github/workflows/site.yml` is the only supported deployment workflow. It keeps `main` for Eleventy source, updates `gh-pages` with generated site files, and explicitly deploys that same `_site/` output through GitHub Pages Actions. `gh-pages` remains an output branch, not the Pages source setting. **Do not select "Deploy from a branch" with `main`**, which would deploy unbuilt templates and cause 404s.
+
+The GitHub Pages configuration in the repository settings is not stored in Git, so a maintainer must select **Source: GitHub Actions** separately. That disables GitHub's competing automatic source-branch deployment.
+
+The CI check distinguishes generated `robots.txt` and `sitemap.xml` from source passthrough assets; the site should not be deployed if `npm test` fails.
+
+The deployment uses `GITHUB_TOKEN`; no personal access token or deploy key is needed. Repository/organization policies must allow the publish job's `contents: write`, `pages: write`, and `id-token: write` permissions, and any `github-pages` environment approval rules still apply. Require the `build` check before merging pull requests so that a failed site test cannot land on `main`.
 
 `CNAME` (`scistitch.com`) and `.nojekyll` are copied into both published outputs. Keep the existing custom domain and HTTPS settings; DNS changes are not required.
 

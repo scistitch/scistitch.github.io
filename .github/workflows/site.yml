@@ -51,17 +51,39 @@ jobs:
         with:
           name: public-site
           path: _site
-      - name: Publish generated files to gh-pages
+      - name: Verify deployable output
+        run: |
+          test -f _site/index.html
+          test -f _site/CNAME
+          test -f _site/robots.txt
+          test -f _site/sitemap.xml
+          grep -qx 'scistitch.com' _site/CNAME
+      # Keep gh-pages as the generated-output branch while deploying the
+      # identical artifact using GitHub Actions. This is not a second Pages
+      # deployment when Settings > Pages > Source is "GitHub Actions".
+      - name: Mirror generated site to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: _site
-      # GITHUB_TOKEN branch pushes do not trigger branch-based Pages builds.
-      # Deploy the same output explicitly without a PAT or deploy key.
+      # Deploy explicitly: pushes by GITHUB_TOKEN do not trigger Pages builds.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify live homepage
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if curl --fail --silent --show-error --location --max-time 15 https://scistitch.com/ -o /tmp/scistitch-homepage.html &&
+              grep -q '<title>SciStitch' /tmp/scistitch-homepage.html; then
+              echo "SciStitch homepage is responding with generated HTML"
+              exit 0
+            fi
+            echo "Homepage verification attempt ${attempt} failed; retrying..."
+            sleep 10
+          done
+          echo "Published homepage did not pass availability check"
+          exit 1
