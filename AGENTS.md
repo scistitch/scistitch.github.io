@@ -12,10 +12,12 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `src/partnership.njk` — OSL relationship and collaboration (`/partnership/`).
 - `src/network.njk` — independent professional collaborators (`/network/`).
 - `src/contact.njk` — inquiry guidance and a working email action (`/contact/`).
-- `src/about.njk` — team history and cofounder profiles (`/about/`).
+- `src/about.njk` — team history, values, and founder profile (`/about/`).
 - `src/_includes/` — base layout, metadata, shared header/footer, navigation macro, wordmark, and contact section.
 - `src/_data/navigation.json` — shared navigation labels and routes.
-- `src/_data/site.json` — canonical site URL and shared business contact.
+- `src/_data/site.json` — canonical site URL, shared contact, and social image.
+- `src/sitemap.njk`, `src/robots.njk` — canonical sitemap and crawler guidance.
+- `images/logo/social-banner.png` — official 1200 × 630 social image; reuse it instead of inventing artwork.
 - `styles.css`, `script.js`, `assets/` — static source assets, copied unchanged into the output.
 - `CNAME`, `.nojekyll`, `LICENSE` — preserved and copied to the public output.
 - `eleventy.config.js`, `package.json`, `package-lock.json` — build configuration and locked dependencies.
@@ -24,7 +26,7 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `_site/` — generated output, ignored by Git. Never commit it.
 - `PLAN.md` — ignored local working plan. Never force-add it.
 
-Change shared templates or data once rather than copying navigation, metadata, headers, footers, or contact markup into pages. About links point to `/about/`; the homepage `#about` remains a short introduction. Preserve all seven public content routes, root-relative assets, unique metadata, and fragment targets. Page front matter supplies per-page contact text. Only trusted repository-authored HTML is rendered with `safe`; leave escaping enabled for other data.
+Change shared templates or data once rather than copying navigation, metadata, headers, footers, or contact markup into pages. Keep titles and search descriptions factual, sitemap URLs aligned with canonical routes, and social images linked to the official PNG. Do not invent search console verification, analytics tracking, legal statuses, or schema facts. About links point to `/about/`; the homepage `#about` remains a short introduction. Preserve all seven public content routes, root-relative assets, unique metadata, and fragment targets. Page front matter supplies per-page contact text. Only trusted repository-authored HTML is rendered with `safe`; leave escaping enabled for other data.
 
 ## Brand and content
 
