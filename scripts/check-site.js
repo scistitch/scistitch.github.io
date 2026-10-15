@@ -117,7 +117,7 @@ assert.equal(socialImage.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "so
 assert.equal(socialImage.readUInt32BE(16), 1200, "social image width");
 assert.equal(socialImage.readUInt32BE(20), 630, "social image height");
 const sitemap = readFileSync(join(output, "sitemap.xml"), "utf8");
-const locs = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map((match) => match[1]);
+const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 assert.deepEqual(locs, routes.map((route) => site.url + route), "sitemap canonical page URLs");
 assert.equal(new Set(locs).size, locs.length, "sitemap has no duplicate URLs");
 assert(sitemap.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), "sitemap XML namespace");
