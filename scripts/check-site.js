@@ -84,9 +84,14 @@ for (const path of expectedFiles.filter((f) => !f.endsWith(".html"))) {
   assert(readFileSync(join(output, path)).equals(readFileSync(path)), `${path}: passthrough file changed`);
 }
 const homepageHrefs = pages.get("/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
+const aboutHrefs = pages.get("/about/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
+assert(homepageHrefs.includes("/projects/"), "homepage missing experience link");
+assert(aboutHrefs.includes("/projects/"), "about page missing experience link");
+assert(pages.get("/about/").ids.includes("our-story"), "about page missing story anchor");
 for (const project of ["osl-projects", "infodengue", "literev"]) {
-  assert(pages.get("/projects/").ids.includes(project), `missing ${project} case study`);
-  assert(homepageHrefs.includes(`/projects/#${project}`), `homepage missing ${project} preview`);
+  assert(pages.get("/projects/").ids.includes(project), `missing ${project} experience section`);
+  assert(!homepageHrefs.includes(`/projects/#${project}`), `homepage repeats ${project} portfolio content`);
+  assert(!aboutHrefs.includes(`/projects/#${project}`), `about page repeats ${project} portfolio navigation`);
 }
 assert(homepageHrefs.includes("/contact/"), "homepage missing inquiry CTA");
 const inquiryHrefs = pages.get("/contact/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
