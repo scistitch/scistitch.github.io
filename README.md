@@ -17,7 +17,7 @@ Open http://localhost:8080. Eleventy rebuilds when templates or assets change.
 npm test
 ```
 
-This builds the site and checks generated HTML, page metadata, navigation, local links, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all seven content routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
+This builds the site and checks generated HTML, canonical and social metadata, sitemap and robots files, navigation, local links, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all seven content routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
 
 ## Editing
 
@@ -26,7 +26,9 @@ This builds the site and checks generated HTML, page metadata, navigation, local
 - `src/_includes/base.njk`: document layout.
 - `src/_includes/head.njk`, `header.njk`, `footer.njk`, `navigation.njk`, `wordmark.njk`, and `contact.njk`: shared page elements. Navigation is rendered from one shared macro; contact text is supplied by each page’s front matter.
 - `src/_data/navigation.json`: navigation labels and routes, used by every navigation surface.
-- `src/_data/site.json`: canonical site URL and shared business contact.
+- `src/_data/site.json`: canonical site URL, shared business contact, and social preview image path.
+- `src/sitemap.njk` and `src/robots.njk`: XML sitemap and crawler rules generated from site data and navigation.
+- `images/logo/social-banner.png`: existing 1200 × 630 official sharing graphic used by Open Graph and social card metadata.
 - `styles.css`, `script.js`, and `assets/`: source styles, progressive enhancements, local artwork, fonts, portraits, and their licenses. These are copied without changes.
 - `eleventy.config.js`: template configuration and the public files to copy.
 - `scripts/check-site.js`: checks the generated site.
@@ -34,7 +36,7 @@ This builds the site and checks generated HTML, page metadata, navigation, local
 
 Pages keep their existing directory URLs. Front matter supplies the title, descriptions, permalink, and contact section. HTML in `contact.title` and `contact.description` is trusted repository content; it is rendered with Nunjucks’s `safe` filter to preserve line breaks. Other interpolated fields are escaped.
 
-Professional Network members are independent collaborators, not employees. No profiles are supplied yet; add approved profiles in a follow-up change.
+Professional Network profiles are managed in `src/_data/professionals.json`; members are independent collaborators, not employees.
 
 ## Build and publishing
 
@@ -48,9 +50,9 @@ Pull requests run `npm ci` and `npm test` with read-only repository permissions.
 
 The publish job is restricted to `scistitch/scistitch.github.io` on `main`; fork builds and pull requests cannot publish. A manual workflow run on upstream `main` can retry publishing. Builds are reproducible through `package-lock.json`.
 
-### One-time migration setting
+### Deployment configuration
 
-**Before merging this migration, set Settings → Pages → Build and deployment → Source to GitHub Actions.** The current root-of-`main` publishing configuration will no longer work because source branches contain templates instead of generated HTML.
+GitHub Pages should use **GitHub Actions** as its build and deployment source. Eleventy templates stay on `main` and CI deploys the generated output.
 
 The workflow updates `gh-pages` with `GITHUB_TOKEN` and deploys explicitly: GitHub does not trigger a branch-based Pages build from commits pushed using that token. No personal access token or deploy key is needed. Repository/organization policies must allow the publish job’s `contents: write`, `pages: write`, and `id-token: write` permissions, and any `github-pages` environment approval rules still apply.
 
