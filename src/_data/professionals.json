@@ -1,5 +1,13 @@
 [
   {
+    "id": "anavelyz-perez",
+    "name": "Anavelyz Perez",
+    "headline": "Statistician · Data analysis & modeling",
+    "bio": "Anavelyz holds a degree in statistics and is passionate about data analysis and statistical modeling. She brings curiosity and an analytical approach to complex problems, and enjoys sharing her knowledge with people eager to learn about statistics.",
+    "photo": "/assets/anavelyz-perez.webp",
+    "linkedin": "https://www.linkedin.com/in/anavelyz-perez-5b1161117/"
+  },
+  {
     "id": "aniket-kumar",
     "name": "Aniket Kumar",
     "headline": "Software engineer · Open-source contributor",
