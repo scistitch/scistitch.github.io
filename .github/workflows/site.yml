@@ -40,7 +40,7 @@ jobs:
     if: github.repository == 'scistitch/scistitch.github.io' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
     environment:
@@ -58,8 +58,16 @@ jobs:
           test -f _site/robots.txt
           test -f _site/sitemap.xml
           grep -qx 'scistitch.com' _site/CNAME
-      # GitHub Pages must be configured to use GitHub Actions as its source.
-      # Publish _site once; never publish Eleventy templates from main.
+      # Keep gh-pages as the generated-output branch while deploying the
+      # identical artifact using GitHub Actions. This is not a second Pages
+      # deployment when Settings > Pages > Source is "GitHub Actions".
+      - name: Mirror generated site to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: _site
+      # Deploy explicitly: pushes by GITHUB_TOKEN do not trigger Pages builds.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

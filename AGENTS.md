@@ -2,7 +2,7 @@
 
 ## Project
 
-SciStitch’s public company website is served at **https://scistitch.com/** using GitHub Pages. Eleventy and Nunjucks generate static HTML; no frontend framework or browser runtime is needed. Source stays on `main` and feature branches. Only generated `_site/` files are deployed through GitHub Actions. The legacy `gh-pages` branch is not used as the Pages publishing source.
+SciStitch’s public company website is served at **https://scistitch.com/** using GitHub Pages. Eleventy and Nunjucks generate static HTML; no frontend framework or browser runtime is needed. Source stays on `main` and feature branches. GitHub Actions builds `_site/`, commits only generated files to `gh-pages`, and explicitly deploys the same artifact. The repository's GitHub Pages setting must use **GitHub Actions** rather than source-branch deployment from `main`.
 
 ## Files and routes
 
@@ -22,7 +22,7 @@ SciStitch’s public company website is served at **https://scistitch.com/** usi
 - `CNAME`, `.nojekyll`, `LICENSE` — preserved and copied to the public output.
 - `eleventy.config.js`, `package.json`, `package-lock.json` — build configuration and locked dependencies.
 - `scripts/check-site.js` — generated-site verification.
-- `.github/workflows/site.yml` — PR checks and upstream-main publication of the built Pages artifact. The Pages Source setting must be **GitHub Actions**, not branch deployment from `main`.
+- `.github/workflows/site.yml` — PR checks and upstream-main publishing: validate, mirror `_site/` to `gh-pages`, and deploy that built artifact via GitHub Pages Actions. Use **GitHub Actions** as the Pages Source setting; never deploy raw `main` contents.
 - `_site/` — generated output, ignored by Git. Never commit it.
 - `PLAN.md` — ignored local working plan. Never force-add it.
 
