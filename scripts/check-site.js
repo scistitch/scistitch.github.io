@@ -5,6 +5,7 @@ import { parse } from "parse5";
 
 const output = "_site";
 const navigation = JSON.parse(readFileSync("src/_data/navigation.json", "utf8"));
+const professionals = JSON.parse(readFileSync("src/_data/professionals.json", "utf8"));
 const site = JSON.parse(readFileSync("src/_data/site.json", "utf8"));
 const routes = ["/", ...navigation.map((item) => item.url), "/contact/", "/images/logo/"];
 const pages = new Map();
@@ -110,7 +111,48 @@ for (const project of ["osl-projects", "infodengue", "literev"]) {
   assert(!homepageHrefs.includes(`/projects/#${project}`), `homepage repeats ${project} portfolio content`);
   assert(!aboutHrefs.includes(`/projects/#${project}`), `about page repeats ${project} portfolio navigation`);
 }
+assert(homepageHrefs.includes("/challenges/"), "homepage missing link to open challenges");
 assert(homepageHrefs.includes("/contact/"), "homepage missing inquiry CTA");
+// Challenge program: institution accountability, open science, and clear admissions.
+const challengePage = pages.get("/challenges/");
+assert(challengePage, "Open Challenges must be a navigable page");
+for (const id of ["institutions", "join", "process", "open-results"]) {
+  assert(challengePage.ids.includes(id), `Open Challenges missing section ${id}`);
+}
+const challengeHtml = readFileSync(join(output, "challenges/index.html"), "utf8");
+for (const phrase of [
+  "Challenge Charter", "Contributor Participation Agreement", "open licenses",
+  "open-access preprint", "authorship criteria", "validation", "restricted data",
+]) {
+  assert(challengeHtml.toLowerCase().includes(phrase.toLowerCase()), `Open Challenges missing ${phrase}`);
+}
+const challengeLinks = challengePage.elements.filter((e) => e.tag === "a").map((e) => e.attrs.href);
+assert(challengeLinks.includes(site.challengeMailto), "Challenge institution contact missing");
+assert(challengeLinks.includes(site.collaboratorMailto), "Challenge collaborator contact missing");
+assert(pages.get("/partnership/").elements.some((e) => e.tag === "a" && e.attrs.href === "/challenges/#institutions"), "Partnership page missing institutional challenges link");
+
+// Every collaborator appears once and only in the correct section.
+const networkPage = pages.get("/network/");
+function cardIdsIn(sectionId) {
+  const section = networkPage.elements.find((e) => e.tag === "section" && e.attrs.id === sectionId);
+  assert(section, `Missing network section ${sectionId}`);
+  const ids = [];
+  walk(section.node, (node) => {
+    if (node.tagName === "article" && (node.attrs || []).some((a) => a.name === "class" && a.value.split(/\\s+/).includes("professional-card"))) {
+      const id = (node.attrs || []).find((a) => a.name === "id")?.value;
+      ids.push(id);
+    }
+  });
+  return ids;
+}
+assert(professionals.some((member) => member.status === "active"), "Active members need explicit approval and data");
+assert(professionals.every((member) => !member.status || member.status === "active"), "Unknown membership status");
+const expectedActive = professionals.filter((member) => member.status === "active").map((member) => member.id).sort();
+const expectedNetwork = professionals.filter((member) => member.status !== "active").map((member) => member.id).sort();
+assert.deepEqual(cardIdsIn("active-members").sort(), expectedActive, "Active member cards do not match data");
+assert.deepEqual(cardIdsIn("professional-network").sort(), expectedNetwork, "Network member cards do not match data");
+assert.equal(new Set(professionals.map((member) => member.id)).size, professionals.length, "Duplicate people in directory");
+
 const inquiryHrefs = pages.get("/contact/").elements.filter((element) => element.tag === "a").map((element) => element.attrs.href);
 assert(inquiryHrefs.some((href) => href.startsWith("mailto:connect@scistitch.com?subject=")), "contact page missing email action");
 // Check that the existing brand banner is an actual 1200 × 630 PNG.
