@@ -4,5 +4,7 @@
   "linkedin": "https://www.linkedin.com/company/scistitch/",
   "contactSubject": "Let%E2%80%99s%20talk%20SciStitch",
   "inquiryMailto": "mailto:connect@scistitch.com?subject=SciStitch%20project%20inquiry&body=Hello%20SciStitch%2C%0A%0AOrganization%20(optional)%3A%20%0AProject%20goal%20or%20challenge%3A%20%0ARelevant%20data%20or%20tools%3A%20%0ATimeline%20(if%20known)%3A%20%0ABudget%20(if%20known)%3A%20%0A%0A",
-  "socialImage": "/images/logo/social-banner.png"
+  "socialImage": "/images/logo/social-banner.png",
+  "challengeMailto": "mailto:connect@scistitch.com?subject=Propose%20an%20open%20challenge&body=Organization%3A%0AProblem%20and%20beneficiaries%3A%0AAvailable%20public%20data%20or%20evidence%3A%0AInstitutional%20contact%3A%0ACapacity%20to%20guide%20and%20validate%3A%0A",
+  "collaboratorMailto": "mailto:connect@scistitch.com?subject=Join%20the%20SciStitch%20network&body=Expertise%3A%0AExisting%20scientific%20or%20impact%20project%3A%0ALinks%20to%20your%20work%3A%0AAvailability%3A%0A"
 }
