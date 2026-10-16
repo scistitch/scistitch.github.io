@@ -31,7 +31,7 @@
         menuButton.focus();
       }
     });
-    const desktop = window.matchMedia("(min-width: 901px)");
+    const desktop = window.matchMedia("(min-width: 1101px)");
     desktop.addEventListener("change", (event) => {
       if (event.matches) {
         const focusWasInMenu =
