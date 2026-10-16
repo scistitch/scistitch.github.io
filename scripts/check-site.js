@@ -138,7 +138,7 @@ function cardIdsIn(sectionId) {
   assert(section, `Missing network section ${sectionId}`);
   const ids = [];
   walk(section.node, (node) => {
-    if (node.tagName === "article" && (node.attrs || []).some((a) => a.name === "class" && a.value.split(/\\s+/).includes("professional-card"))) {
+    if (node.tagName === "article" && (node.attrs || []).some((a) => a.name === "class" && a.value.split(/\s+/).includes("professional-card"))) {
       const id = (node.attrs || []).find((a) => a.name === "id")?.value;
       ids.push(id);
     }
