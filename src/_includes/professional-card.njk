@@ -1,8 +1,11 @@
-<article class="professional-card" id="{{ professional.id }}" aria-labelledby="{{ professional.id }}-name">
+<article class="professional-card{% if professional.status == 'active' %} professional-card--active{% endif %}" id="{{ professional.id }}" aria-labelledby="{{ professional.id }}-name">
   <header class="professional-header">
     <img class="professional-portrait" src="{{ professional.photo }}"
       width="460" height="460" alt="" loading="lazy" decoding="async" />
     <div class="professional-heading">
+      {% if professional.status == "active" %}
+      <p class="eyebrow professional-status">Active member</p>
+      {% endif %}
       <h3 id="{{ professional.id }}-name">{{ professional.name }}</h3>
       <p class="professional-role">{{ professional.headline }}</p>
     </div>
