@@ -55,7 +55,8 @@ for (const route of routes) {
   assert.equal(meta("name", "twitter:description"), meta("property", "og:description"), `${route}: social card description`);
   assert.equal(meta("name", "twitter:image"), site.url + site.socialImage, `${route}: social card image`);
   assert(meta("name", "twitter:image:alt"), `${route}: social card alternative text`);
-  for (const nav of elements.filter((e) => e.tag === "nav")) {
+  const globalNavigationLabels = ["Main navigation", "Mobile navigation", "Footer navigation"];
+  for (const nav of elements.filter((e) => e.tag === "nav" && globalNavigationLabels.includes(e.attrs["aria-label"]))) {
     const links = [];
     walk(nav.node, (node) => {
       if (node.tagName === "a") links.push(Object.fromEntries(node.attrs.map((a) => [a.name, a.value])));

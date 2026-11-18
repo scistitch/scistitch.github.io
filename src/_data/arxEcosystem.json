@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Language & compiler",
+    "items": [
+      {"name": "Arx", "url": "https://github.com/arxlang/arx/tree/main/packages/arx", "description": "Language frontend and compiler CLI.", "status": "Functional prototype"},
+      {"name": "ASTx", "url": "https://github.com/arxlang/arx/tree/main/packages/astx", "description": "Shared, language-agnostic syntax tree model.", "status": "Functional, evolving library"},
+      {"name": "IRx", "url": "https://github.com/arxlang/arx/tree/main/packages/irx", "description": "Semantic analysis, LLVM lowering, and Arrow-backed native runtime.", "status": "Experimental backend"},
+      {"name": "ArxPy", "url": "https://github.com/arxlang/arx/tree/main/packages/arxpy", "description": "Python-facing compiler API.", "status": "Diagnostics and error foundations only"},
+      {"name": "ArxJIT", "url": "https://github.com/arxlang/arx/tree/main/packages/arxjit", "description": "Python decorator frontend for a supported language subset.", "status": "Foundations; calls still use Python fallback"},
+      {"name": "AIX", "url": "https://github.com/arxlang/arx/tree/main/packages/aix", "description": "Symbolic-language experiment.", "status": "Toy project; no stability commitment"}
+    ]
+  },
+  {
+    "title": "Scientific libraries & evaluation",
+    "items": [
+      {"name": "SciArx", "url": "https://github.com/arxlang/sciarx", "description": "Math, statistics, and initial linear algebra kernels.", "status": "Early bootstrap; broader tensor APIs remain planned"},
+      {"name": "Vizx", "url": "https://github.com/arxlang/vizx", "description": "Static SVG plots written in Arx.", "status": "Initial bar, line, and scatter plots"},
+      {"name": "Arx benchmarks", "url": "https://github.com/arxlang/benchmarks", "description": "Output-checked workloads and recorded benchmark environments.", "status": "Initial suite; no general performance claim"}
+    ]
+  },
+  {
+    "title": "Developer experience & documentation",
+    "items": [
+      {"name": "ArxPM", "url": "https://github.com/arxlang/arxpm", "description": "Project, environment, build, and package workflows.", "status": "Evolving toolchain compatibility"},
+      {"name": "VS Code extension", "url": "https://github.com/arxlang/vscode-arx", "description": "Syntax highlighting and language configuration.", "status": "No language server"},
+      {"name": "Jupyter kernel", "url": "https://github.com/arxlang/arxlang-jupyter-kernel", "description": "Wrapper kernel for compiled notebook cells.", "status": "Compiler CLI integration still needs alignment"},
+      {"name": "Douki", "url": "https://github.com/arxlang/douki", "description": "YAML docstrings enriched with Python type annotations.", "status": "Standalone validation and formatting tooling"},
+      {"name": "DoukiMD", "url": "https://github.com/arxlang/doukimd", "description": "Static Markdown documentation with Douki API references.", "status": "Initial Python support; Arx adapter is future work"},
+      {"name": "Arx examples", "url": "https://github.com/arxlang/arx-examples", "description": "Notebook and packaging examples.", "status": "Developing examples repository"},
+      {"name": "ArxEPs", "url": "https://github.com/arxlang/arxeps", "description": "Enhancement proposals and design discussions.", "status": "Proposals are not implemented features"}
+    ]
+  },
+  {
+    "title": "Native dependency packaging",
+    "items": [
+      {"name": "arx-arrowcpp-sources", "url": "https://github.com/arxlang/arx-arrowcpp-sources", "description": "Pinned Apache Arrow C++ sources addressable from Python builds.", "status": "Source bundle; no compiled binaries"},
+      {"name": "arx-nanoarrow-sources", "url": "https://github.com/arxlang/arx-nanoarrow-sources", "description": "Packaged nanoarrow C headers and sources.", "status": "Source bundle; no compiled binaries"}
+    ]
+  }
+]
