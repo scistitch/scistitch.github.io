@@ -1384,211 +1384,201 @@ button {
   letter-spacing: -0.04em;
 }
 
-.portfolio-jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 28px;
-  padding-block: 24px;
-  border-top: 1px solid var(--line);
-  font-size: 0.875rem;
+.projects-intro {
+  padding-top: clamp(40px, 6vw, 84px);
 }
 
-.portfolio-jump a:hover,
-.portfolio-links a:hover,
-.ecosystem-components a:hover {
-  color: var(--blue);
-}
-
-.open-source-work {
-  border-top: 1px solid var(--line);
-  background: var(--white);
-}
-
-.open-source-work .section-heading {
-  margin-bottom: 20px;
-}
-
-.portfolio-context {
-  max-width: 750px;
-  margin-bottom: 48px;
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.8;
-}
-
-.portfolio-project {
+.projects-intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);
-  gap: clamp(32px, 6vw, 100px);
-  padding-block: 48px;
-  border-top: 1px solid var(--line);
-  scroll-margin-top: 110px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(28px, 6vw, 100px);
+  padding-bottom: clamp(30px, 4vw, 54px);
 }
 
-.portfolio-project:target {
-  border-top-color: var(--blue);
+.projects-intro h1 {
+  font-size: clamp(45px, 6.5vw, 86px);
+  line-height: 1.04;
+  letter-spacing: -0.065em;
 }
 
-.portfolio-project-heading > .eyebrow {
-  color: var(--blue);
-  font-size: 0.875rem;
-}
-
-.portfolio-project h3 {
-  margin-top: 12px;
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-}
-
-.portfolio-summary {
-  margin-top: 16px;
-  font-size: 1.125rem;
+.projects-intro-grid p {
+  max-width: 36ch;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
   line-height: 1.65;
 }
 
-.project-status {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 5px 10px;
-  border: 1px solid var(--line);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.project-contribution {
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.8;
-}
-
-.project-technologies {
+.projects-jump {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px 16px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
+  gap: 6px 28px;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+}
+
+.projects-jump a {
+  padding-block: 8px;
+}
+
+.projects-jump a:hover,
+.projects-section-heading a:hover,
+.projects-history-list a:hover {
+  color: var(--blue);
+}
+
+.projects-feature {
+  padding-block: clamp(32px, 4.8vw, 62px);
+  background: #ebf0fc;
+  border-block: 1px solid var(--line);
+}
+
+.projects-section-heading {
+  margin-bottom: 26px;
+}
+
+.projects-section-heading h2 {
+  font-size: clamp(28px, 3.4vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.projects-section-heading p {
+  max-width: 68ch;
+  margin-top: 10px;
   color: var(--muted);
-  font-size: 0.875rem;
 }
 
-.portfolio-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 22px;
-  margin-top: 24px;
-  font-size: 0.875rem;
-}
-
-.portfolio-links a,
-.ecosystem-components a {
+.projects-section-heading a,
+.projects-history-list a {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.project-reasoning {
+.projects-grid {
   display: grid;
-  gap: 24px;
-  margin: 0;
+  gap: clamp(14px, 2vw, 28px);
 }
 
-.project-reasoning dt {
-  margin-bottom: 7px;
-  font-weight: 600;
+.projects-grid--feature {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.project-reasoning dd,
-.ecosystem-components dd {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
+.projects-grid--specialist {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.ecosystem-details {
-  margin-top: 30px;
-  border-block: 1px solid var(--line);
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(20px, 2.6vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
 }
 
-.ecosystem-details summary {
-  padding: 18px 6px;
+.project-card:target {
+  border-color: var(--blue);
+}
+
+.project-name {
   color: var(--blue);
-  cursor: pointer;
-  line-height: 1.6;
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
-.ecosystem-details summary:focus-visible {
-  outline: 3px solid var(--blue);
-  outline-offset: 3px;
+.project-card h3 {
+  margin-block: 8px 10px;
+  max-width: 26ch;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
 }
 
-.ecosystem-intro {
-  margin-block: 8px 28px;
+.project-description {
+  max-width: 54ch;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.project-stage {
+  margin-top: 12px;
   color: var(--muted);
   font-size: 0.875rem;
-  line-height: 1.8;
 }
 
-.ecosystem-group h4 {
-  margin: 24px 0 12px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.ecosystem-components {
-  margin: 0;
+.project-link {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--blue);
   font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.ecosystem-components > div {
-  display: grid;
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
-  gap: 20px;
-  padding-block: 14px;
+.project-link:hover {
+  color: var(--blue-dark);
+}
+
+.projects-specialist,
+.projects-history {
+  padding-block: clamp(36px, 5vw, 68px);
+}
+
+.projects-history {
   border-top: 1px solid var(--line);
-  overflow-wrap: anywhere;
 }
 
-.ecosystem-components dd span {
-  display: block;
-  margin-top: 5px;
-  color: var(--ink);
+.projects-history-list article {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.4fr) minmax(0, 1fr);
+  gap: 12px 24px;
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
 }
 
-.ecosystem-details > .text-link {
-  margin-block: 22px;
+.projects-history-list h3 {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.history-tools {
-  max-width: 750px;
-  margin-bottom: 32px;
-}
-
-.history-tools h3 {
-  margin-block: 12px;
-  font-size: 26px;
-}
-
-.history-tools p {
+.projects-history-list p {
+  max-width: 74ch;
   color: var(--muted);
+}
+
+.projects-contact .contact {
+  padding-bottom: clamp(36px, 5vw, 68px);
+}
+
+.projects-contact h2 {
+  max-width: 19ch;
+  font-size: clamp(30px, 4.5vw, 58px);
+  line-height: 1.15;
 }
 
 @media (max-width: 760px) {
-  .portfolio-project {
+  .projects-grid--specialist {
     grid-template-columns: minmax(0, 1fr);
-    gap: 30px;
-    padding-block: 36px;
-  }
-
-  .portfolio-context {
-    margin-bottom: 32px;
   }
 }
 
-@media (max-width: 420px) {
-  .ecosystem-components > div {
+@media (max-width: 600px) {
+  .projects-intro-grid,
+  .projects-grid--feature,
+  .projects-history-list article {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .projects-jump {
+    gap: 2px 16px;
+  }
+
+  .projects-history-list article {
     gap: 6px;
   }
 }
@@ -2484,18 +2474,6 @@ button {
   .home-hero h1 {
     font-size: clamp(35px, 9vw, 54px);
   }
-}
-
-/* One shared context for earlier Open Science Labs work. */
-.previous-experience {
-  background: var(--white);
-  border-top: 1px solid var(--line);
-  scroll-margin-top: 24px;
-}
-
-.case-study-section {
-  border-top: 1px solid var(--line);
-  scroll-margin-top: 24px;
 }
 
 /* Email-first inquiry journey; no nonfunctional form or client-data storage. */
