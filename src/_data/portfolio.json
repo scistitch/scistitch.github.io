@@ -3,8 +3,8 @@
     "id": "makim",
     "name": "Makim",
     "group": "delivery",
-    "title": "Run common tasks the same way",
-    "description": "Makim puts build, test, and data tasks in one YAML file. A new teammate can use the same documented commands as the rest of the team and run them in CI.",
+    "title": "Give the team one set of commands",
+    "description": "Makim puts build, test, and data tasks in one YAML file, so new teammates and CI can run the same documented commands.",
     "linkLabel": "See Makim’s task examples",
     "url": "https://makim.org/"
   },
@@ -12,8 +12,8 @@
     "id": "sugar",
     "name": "Sugar",
     "group": "delivery",
-    "title": "Make container setups easier to repeat",
-    "description": "Sugar gives Docker Compose setups named profiles. Each profile records which services, configuration files, and environment settings to use for development or testing.",
+    "title": "Save a container setup for each environment",
+    "description": "Sugar stores the Docker Compose services and configuration for development or testing in named profiles. Teammates can run the same setup without piecing together command-line options.",
     "linkLabel": "See Sugar’s configuration examples",
     "url": "https://github.com/sugar-org/sugar#how-to-use-it"
   },
@@ -22,7 +22,7 @@
     "name": "HiperHealth",
     "group": "specialist",
     "title": "Keep AI workflow steps reviewable",
-    "description": "A Python library for clinical research workflows separates document extraction, data collection, and AI steps. Parquet sessions save a history that can be reopened for analysis.",
+    "description": "HiperHealth separates document extraction, data collection, and AI processing so clinical researchers can review each step. It saves sessions in Parquet for later analysis.",
     "status": "Early development · Production targeted for early 2027",
     "linkLabel": "Inspect the HiperHealth library",
     "url": "https://github.com/hiperhealth/hiperhealth"
@@ -32,7 +32,7 @@
     "name": "FreeCampus",
     "group": "specialist",
     "title": "Reuse exercises across courses and notebooks",
-    "description": "FreeCampus Tools lets educators write a quiz once and reuse it on a course page, in Jupyter, or in Colab. Its authoring tools and course materials are public.",
+    "description": "FreeCampus Tools lets educators write a quiz once and reuse it on a course page, in Jupyter, or in Colab.",
     "status": "Learning app in early development · Production targeted for early 2027",
     "linkLabel": "See a reusable FreeCampus quiz",
     "url": "https://github.com/freecampus/freecampustools#create-a-quiz"
@@ -42,7 +42,7 @@
     "name": "Arx ecosystem",
     "group": "specialist",
     "title": "Build a language around scientific data",
-    "description": "Arx parses typed source, ASTx represents its syntax, and IRx compiles it through LLVM. Apache Arrow supplies the data containers. Related tools cover packaging, notebooks, and scientific computing.",
+    "description": "Arx explores how a custom language can work with scientific data. Its frontend parses the code, ASTx represents its structure, and IRx compiles it through LLVM. Apache Arrow provides the data containers.",
     "status": "Experimental · Production targeted for early 2027",
     "linkLabel": "Explore Arx components and status",
     "url": "https://arxlang.org/ecosystem.html"
