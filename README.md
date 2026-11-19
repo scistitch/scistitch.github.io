@@ -19,6 +19,23 @@ npm test
 
 This builds the site and checks generated HTML, canonical and social metadata, sitemap and robots files, navigation, local links, challenge program content and contact links, network membership grouping, fragment targets, assets, and the public output file list. JavaScript syntax is checked too. Preview all content routes at desktop and mobile widths, including 320px, with keyboard navigation and JavaScript disabled when browser tooling is available.
 
+## Portfolio content
+
+`src/_data/portfolio.json` contains the five owner-selected ongoing projects.
+`src/_includes/portfolio-project.njk` renders each entry’s problem, approach,
+practical relevance, contribution scope, status, technologies, and public links.
+`src/_data/arxEcosystem.json` supplies the optional native HTML disclosure for
+Arx components and related tools. It works without JavaScript.
+
+Keep development status factual and check it against the linked official sources
+when revising content. The initial entries were reviewed on 2026-11-18 against
+Makim, Sugar, Arx, HiperHealth, and FreeCampus public repositories and documentation.
+For Arx, use the current monorepo README and [ecosystem status](https://arxlang.org/ecosystem.html),
+plus each related tool’s README; archived repositories are not the current core sources.
+FreeCampus’s LMS app remains in progress; its entry links public courses and shared
+tooling only. Avoid outcome claims without evidence. Earlier Infodengue, LiteRev,
+PyMedX, and infrastructure contributions retain their shared OSL history context.
+
 ## Editing
 
 - `src/index.njk`, `src/services.njk`, `src/projects.njk`, `src/partnership.njk`, `src/network.njk`, and `src/about.njk`: page-specific content and front matter.
@@ -47,7 +64,7 @@ The proposed 12-week cycle is illustrative, not a guaranteed service level. A ch
 
 All outputs generated for a challenge should be openly released where lawful and ethically appropriate, using appropriate open licenses for data, code, models, methods, documentation and research outputs. Sensitive or third-party-restricted original data cannot be disclosed; arrange shareable derivatives, aggregation or synthetic examples and document the limitations, or do not accept the work as an open challenge. For scientific articles, use open-access publication or a legally shareable open-access preprint. Offer coauthorship to everyone who meets recognized authorship standards and appropriately credit all other contributions.
 
-The existing `/projects/` Experience page documents prior OSL work and is not an affiliated-project directory. Someone's external project remains independent when they join the network; only institution-validated and approved challenge outputs can appear in a future SciStitch Challenge Portfolio. No currently open or completed institutional challenges are claimed by this update.
+The `/projects/` Projects & experience page contains owner-selected ongoing open-source work and prior OSL experience. A portfolio entry describes contribution experience, not automatic SciStitch ownership, sponsorship, a client contract, or challenge affiliation. Someone's external project remains independent when they join the network; only institution-validated and approved challenge outputs can appear in a future SciStitch Challenge Portfolio. No currently open or completed institutional challenges are claimed by this update.
 
 ## Build and publishing
 

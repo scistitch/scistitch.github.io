@@ -1,0 +1,83 @@
+[
+  {
+    "id": "makim",
+    "name": "Makim",
+    "area": "Workflow automation",
+    "summary": "Give recurring tasks a shared, documented interface.",
+    "status": "Released · ongoing development",
+    "contribution": "Created by Ivan; ongoing development with the project community.",
+    "problem": "Build, test, and data-processing commands often end up scattered across scripts, notebooks, and CI configuration. New contributors have to reconstruct how to run them.",
+    "approach": "Define tasks, arguments, dependencies, and scoped environments in YAML. Generate command-line help from those definitions and use conditional dependencies and parameter matrices to organize repeatable workflows.",
+    "relevance": "Useful when a small team needs a consistent way to run local development, research jobs, and CI tasks.",
+    "technologies": ["Python", "YAML", "Jinja2", "CLI design", "CI workflows"],
+    "links": [
+      {"label": "Makim website & documentation", "url": "https://makim.org/"},
+      {"label": "Makim source", "url": "https://github.com/makim-org/makim"}
+    ]
+  },
+  {
+    "id": "sugar",
+    "name": "Sugar",
+    "area": "Container workflows",
+    "summary": "Make container configurations easier to run and maintain.",
+    "status": "Released · ongoing development",
+    "contribution": "Created by Ivan; ongoing development with the project community.",
+    "problem": "Working across several container stacks means remembering Compose files, environment files, service selections, and repeated command-line options. Wrapper scripts can multiply across projects.",
+    "approach": "Keep those choices in named YAML profiles and expose them through a consistent CLI over Compose. Separate configuration from routine commands; Podman support remains experimental.",
+    "relevance": "Useful when development and testing need different container setups without another set of custom scripts for each environment.",
+    "technologies": ["Python", "Docker Compose", "YAML", "Podman (experimental)"],
+    "links": [
+      {"label": "Sugar documentation", "url": "https://sugar-org.github.io/sugar/"},
+      {"label": "Sugar source", "url": "https://github.com/sugar-org/sugar"}
+    ]
+  },
+  {
+    "id": "arx",
+    "name": "Arx ecosystem",
+    "area": "Compilers & scientific computing",
+    "summary": "Explore a modular path from typed source code to native data processing.",
+    "status": "Experimental · pre-production",
+    "contribution": "Ivan’s ongoing work across the language, compiler libraries, and supporting tools.",
+    "problem": "A language for scientific data needs more than a parser: it needs type analysis, code generation, data interoperability, packaging, documentation, and tools for people to use it.",
+    "approach": "Separate the language frontend (Arx), shared syntax model (ASTx), and analysis and LLVM backend (IRx). Use Apache Arrow for native data containers, with related tools for projects, notebooks, documentation, and scientific libraries.",
+    "relevance": "Relevant to custom languages, code generation, native data integration, and research prototypes. The ecosystem is still evolving; component readiness varies.",
+    "technologies": ["Python", "LLVM", "C++", "Apache Arrow", "Type systems"],
+    "links": [
+      {"label": "Arx ecosystem status", "url": "https://arxlang.org/ecosystem.html"},
+      {"label": "Arx source", "url": "https://github.com/arxlang/arx"}
+    ]
+  },
+  {
+    "id": "hiperhealth",
+    "name": "HiperHealth",
+    "area": "Health research software",
+    "summary": "Structure AI-assisted workflows so their steps and data can be inspected.",
+    "status": "In development",
+    "contribution": "Ivan’s ongoing work on the open-source clinical workflow library.",
+    "problem": "Health research workflows combine information arriving at different times, document extraction, and AI-generated suggestions. A single prompt makes those steps difficult to separate and examine.",
+    "approach": "Compose a Python pipeline from independent stages and skills. Use typed schemas and resumable Parquet sessions to retain interaction history, alongside document extraction and de-identification tools.",
+    "relevance": "Relevant to staged AI integrations, structured data collection, and inspectable research workflows. This entry describes software engineering in progress, not validated clinical outcomes.",
+    "technologies": ["Python", "Pydantic", "Parquet", "SQLAlchemy", "LLM integration"],
+    "links": [
+      {"label": "HiperHealth documentation", "url": "https://hiperhealth.github.io/hiperhealth/"},
+      {"label": "HiperHealth source", "url": "https://github.com/hiperhealth/hiperhealth"}
+    ]
+  },
+  {
+    "id": "freecampus",
+    "name": "FreeCampus",
+    "area": "Open education & learning tools",
+    "summary": "Keep learning materials and interactive exercises reusable.",
+    "status": "Public materials · learning app in progress",
+    "contribution": "Led by Ivan; ongoing work on learning materials, shared tools, and a learning app for the LMS.",
+    "problem": "Course content, notebook exercises, and web quizzes can drift apart when each format is maintained separately. Educators need a practical way to publish and revise materials together.",
+    "approach": "Develop open course repositories and shared Python quiz models, with JSON export for web renderers and widgets for Jupyter and Colab. A separate learning app for the LMS is in progress.",
+    "relevance": "Useful for education teams connecting content publishing, interactive exercises, and reusable software. Public materials and tools can be inspected now; the learning app is still being developed.",
+    "technologies": ["Python", "Jupyter", "JSON", "Quarto", "MkDocs"],
+    "links": [
+      {"label": "FreeCampus courses", "url": "https://freecampus.org/"},
+      {"label": "FreeCampus Tools source", "url": "https://github.com/freecampus/freecampustools"},
+      {"label": "FreeCampus repositories", "url": "https://github.com/freecampus"}
+    ]
+  }
+]
