@@ -23,7 +23,7 @@
     "group": "specialist",
     "title": "Keep AI workflow steps reviewable",
     "description": "A Python library for clinical research workflows separates document extraction, data collection, and AI steps. Parquet sessions save a history that can be reopened for analysis.",
-    "status": "Open-source library in development",
+    "status": "Early development · Production targeted for early 2027",
     "linkLabel": "Inspect the HiperHealth library",
     "url": "https://github.com/hiperhealth/hiperhealth"
   },
@@ -33,7 +33,7 @@
     "group": "specialist",
     "title": "Reuse exercises across courses and notebooks",
     "description": "FreeCampus Tools lets educators write a quiz once and reuse it on a course page, in Jupyter, or in Colab. Its authoring tools and course materials are public.",
-    "status": "Learning app in development",
+    "status": "Learning app in early development · Production targeted for early 2027",
     "linkLabel": "See a reusable FreeCampus quiz",
     "url": "https://github.com/freecampus/freecampustools#create-a-quiz"
   },
@@ -43,7 +43,7 @@
     "group": "specialist",
     "title": "Build a language around scientific data",
     "description": "Arx parses typed source, ASTx represents its syntax, and IRx compiles it through LLVM. Apache Arrow supplies the data containers. Related tools cover packaging, notebooks, and scientific computing.",
-    "status": "Experimental compiler ecosystem",
+    "status": "Experimental · Production targeted for early 2027",
     "linkLabel": "Explore Arx components and status",
     "url": "https://arxlang.org/ecosystem.html"
   }
