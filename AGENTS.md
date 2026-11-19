@@ -55,6 +55,6 @@ The final command should produce no output. Keep generated files, dependencies, 
 
 ## Git and publishing
 
-- Create PR branches in `xmnlab/scistitch.github.io` from `main` in `scistitch/scistitch.github.io`. Open PRs against upstream `main`.
+- Create feature branches from the upstream repository’s `main` branch. Push them to your fork and open pull requests against upstream `main`.
 - Keep PR validation read-only. Publish only from upstream `main` via `.github/workflows/site.yml`, which builds `_site/`, mirrors its contents to `gh-pages`, and deploys the generated artifact through GitHub Pages Actions.
 - Keep GitHub Pages configured to use GitHub Actions. Preserve `CNAME`, `.nojekyll`, the domain configuration, licenses, and the dependency lockfile.
