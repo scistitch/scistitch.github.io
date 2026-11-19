@@ -21,20 +21,12 @@ This builds the site and checks generated HTML, canonical and social metadata, s
 
 ## Portfolio content
 
-`src/_data/portfolio.json` contains the five owner-selected ongoing projects.
-`src/_includes/portfolio-project.njk` renders each entry’s problem, approach,
-practical relevance, contribution scope, status, technologies, and public links.
-`src/_data/arxEcosystem.json` supplies the optional native HTML disclosure for
-Arx components and related tools. It works without JavaScript.
-
-Keep development status factual and check it against the linked official sources
-when revising content. The initial entries were reviewed on 2026-11-18 against
-Makim, Sugar, Arx, HiperHealth, and FreeCampus public repositories and documentation.
-For Arx, use the current monorepo README and [ecosystem status](https://arxlang.org/ecosystem.html),
-plus each related tool’s README; archived repositories are not the current core sources.
-FreeCampus’s LMS app remains in progress; its entry links public courses and shared
-tooling only. Avoid outcome claims without evidence. Earlier Infodengue, LiteRev,
-PyMedX, and infrastructure contributions retain their shared OSL history context.
+`src/_data/portfolio.json` holds the five ongoing projects. Each card describes
+one problem, a concrete example, and a public link. Add a status when it helps
+readers distinguish an experiment or work in progress from available software.
+Link to the official [Arx ecosystem status](https://arxlang.org/ecosystem.html)
+for component details. FreeCampus’s app is in progress and links point to its
+public work. Historical contributions are credited separately on the Projects page.
 
 ## Editing
 

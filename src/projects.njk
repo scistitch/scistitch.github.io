@@ -2,188 +2,73 @@
 layout: "base.njk"
 permalink: "/projects/"
 title: "Projects & experience — SciStitch"
-description: "Open-source work on Makim, Sugar, Arx, HiperHealth, and FreeCampus: practical problems, engineering approaches, project status, and source code."
+description: "See how SciStitch’s experience with developer tools, data workflows, and research software can help small teams solve similar problems."
 ogTitle: "Projects & experience — SciStitch"
-ogDescription: "Inspect ongoing open-source work and earlier research collaborations, with technologies, implementation approaches, and clear development status."
-contact: {"eyebrow": "A similar problem in your team?", "title": "Start with the<br />problem at hand.", "description": "Share the workflow that needs attention, your constraints, and any relevant code. We can discuss a focused assessment or a small first implementation.", "href": "mailto:connect@scistitch.com?subject=A%20project%20for%20SciStitch", "label": "Discuss your project"}
+ogDescription: "Selected open-source projects and research collaborations, with working examples and links to explore the code."
+contact: {"eyebrow": "Work with SciStitch", "title": "Tell us what’s slowing your team down.", "description": "Send us a short description of the workflow, what you’ve tried, and what you need it to do. A repo or example helps if you have one.", "href": "mailto:connect@scistitch.com?subject=A%20project%20for%20SciStitch", "label": "Discuss your project"}
 ---
-      <section class="hero page-hero container" aria-labelledby="hero-title">
-        <p class="hero-eyebrow eyebrow">
-          <span class="status-dot" aria-hidden="true"></span> Projects &amp; experience
-        </p>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 id="hero-title">
-              Open-source work.<br /><span>Practical experience.</span>
-            </h1>
-            <p class="hero-description">
-              What we build, the problems it addresses, and the engineering behind it.
-              Explore ongoing open-source work and earlier research collaborations.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#open-source-work"
-                >Explore the projects</a
-              >
-              <a class="text-link" href="#osl-experience"
-                >Earlier research experience</a
-              >
-            </div>
-          </div>
-          <figure class="hero-figure page-figure">
-            <div class="figure-top">
-              <span>TOOLS → WORKFLOWS → RESEARCH</span
-              ><span aria-hidden="true">[ 05 ]</span>
-            </div>
-            <img
-              src="/assets/projects-map.svg"
-              width="500"
-              height="415"
-              alt="Connected symbols for open-source code, research data visualization, and scientific literature, representing open-source development and research workflows."
-              fetchpriority="high"
-            />
-            <figcaption>
-              <span class="figure-caption-mark" aria-hidden="true">+</span>
-              Open tools. Shared research.
-            </figcaption>
-          </figure>
-        </div>
-        <nav class="portfolio-jump" aria-label="Project sections">
-          {% for project in portfolio %}<a href="#{{ project.id }}">{{ project.name }}</a>{% endfor %}
-          <a href="#osl-experience">Earlier collaborations</a>
-        </nav>
-      </section>
+<section class="projects-intro container" aria-labelledby="hero-title">
+  <div class="projects-intro-grid">
+    <h1 id="hero-title">Projects &amp;<br />experience</h1>
+    <div>
+      <p>See how we make development easier to repeat, turn research workflows into software, and build tools around the way small teams work.</p>
+      <a class="button button-primary" href="/contact/">Discuss your project</a>
+    </div>
+  </div>
+  <nav class="projects-jump" aria-label="On this page">
+    <a href="#open-source-work">Development workflows</a>
+    <a href="#specialist-software">Specialist software</a>
+    <a href="#osl-experience">Research collaborations</a>
+  </nav>
+</section>
 
-      <section class="open-source-work section-pad" id="open-source-work" aria-labelledby="open-source-title">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow section-label">Ongoing open-source work</p>
-              <h2 id="open-source-title">Projects we help build.</h2>
-            </div>
-            <p>
-              Selected work by founder <a class="inline-external-link" href="/about/#team">Ivan Ogasawara</a>,
-              alongside each project’s contributors. These independently developed
-              projects show the experience we bring to SciStitch collaborations.
-            </p>
-          </div>
-          <p class="portfolio-context">
-            Follow the source and documentation to inspect the implementation.
-            Released tools and early prototypes are identified below; development
-            status is specific to each project.
-          </p>
-          {% for project in portfolio %}
-            {% include "portfolio-project.njk" %}
-          {% endfor %}
-        </div>
-      </section>
+<section class="projects-feature" id="open-source-work" aria-labelledby="open-source-title">
+  <div class="container">
+    <div class="projects-section-heading">
+      <h2 id="open-source-title">Make development easier to repeat</h2>
+      <p>Open-source tools created by SciStitch founder <a href="/about/#team">Ivan Ogasawara</a> and developed with their communities.</p>
+    </div>
+    <div class="projects-grid projects-grid--feature">
+      {% for project in portfolio %}
+        {% if project.group == "delivery" %}{% include "portfolio-project.njk" %}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-      <section class="previous-experience section-pad" id="osl-experience" aria-labelledby="osl-experience-title">
-        <div class="container section-grid">
-          <div class="section-intro">
-            <p class="eyebrow section-label">Previous experience</p>
-            <h2 id="osl-experience-title">Our roots at<br />Open Science Labs.</h2>
-          </div>
-          <div class="about-copy">
-            <p class="about-lead">
-              Before SciStitch, members of our team contributed to earlier
-              phases of these projects through Open Science Labs.
-            </p>
-            <p>
-              These are earlier contributions through OSL, rather than SciStitch
-              client engagements. The projects have since evolved; links provide
-              background on their current work.
-            </p>
-          </div>
-        </div>
-      </section>
+<section class="projects-specialist container" id="specialist-software" aria-labelledby="specialist-title">
+  <div class="projects-section-heading">
+    <h2 id="specialist-title">Build for a specialist workflow</h2>
+    <p>Independent projects Ivan helps develop across health research, education, and scientific computing.</p>
+  </div>
+  <div class="projects-grid projects-grid--specialist">
+    {% for project in portfolio %}
+      {% if project.group == "specialist" %}{% include "portfolio-project.njk" %}{% endif %}
+    {% endfor %}
+  </div>
+</section>
 
-      <section class="section-pad" id="osl-projects" aria-labelledby="osl-title">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow section-label"><span>01 /</span> Open-source tooling</p>
-              <h2 id="osl-title">Research tools<br />and infrastructure.</h2>
-              <a class="text-link" href="https://opensciencelabs.org/projects/incubation/">
-                Explore the OSL Incubator <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <p>
-              Our team's work at OSL included the development and maintenance
-              of tools and workflows that make research software easier to build
-              and share. Makim and Sugar grew from this work and are described
-              in the ongoing projects above.
-            </p>
-          </div>
-          <div class="history-tools">
-            <article>
-              <span class="eyebrow">Literature data</span>
-              <h3>PyMedX</h3>
-              <p>A Python library for accessing PubMed, continued as a fork of
-                the archived PyMed project.</p>
-              <div class="inline-links">
-                <a href="https://github.com/osl-incubator/pymedx">PyMedX ↗</a>
-                <a href="https://github.com/gijswobben/pymed">Original PyMed ↗</a>
-              </div>
-            </article>
-          </div>
-          <div class="section-note">
-            <span class="note-symbol" aria-hidden="true">+</span>
-            <p>
-              The team also worked on OSL's shared infrastructure, including
-              bots, continuous integration, websites, plugins, and DevOps workflows.
-            </p>
-            <a class="text-link" href="https://github.com/OpenScienceLabs">
-              Explore OSL on GitHub <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
+<section class="projects-history container" id="osl-experience" aria-labelledby="osl-experience-title">
+  <div class="projects-section-heading">
+    <h2 id="osl-experience-title">Earlier research collaborations</h2>
+    <p>Contributions made through Open Science Labs before SciStitch.</p>
+  </div>
+  <div class="projects-history-list">
+    <article id="infodengue">
+      <h3><a href="https://info.dengue.mat.br/">Infodengue</a></h3>
+      <p>Built visualizations and contributed to web and deployment workflows for Brazil’s mosquito-borne disease monitoring initiative, co-founded by <a href="https://ceph.fgv.br/node/91">Flávio Codeço Coelho</a> and other researchers.</p>
+    </article>
+    <article id="literev">
+      <h3><a href="https://literev.unige.ch/">LiteRev</a></h3>
+      <p>Provided technical leadership and worked on search, background processing, and benchmarking for literature review software. The University of Geneva founding team includes <a href="https://www.jmir.org/2023/1/e39736/">Erol Orel, Fatma Aziza Merzouki, and Olivia Keiser</a>.</p>
+    </article>
+    <article id="osl-projects">
+      <h3><a href="https://opensciencelabs.org/projects/incubation/">Open Science Labs tooling</a></h3>
+      <p>Developed shared CI, bots, and web infrastructure, and contributed to <a href="https://github.com/osl-incubator/pymedx">PyMedX</a>, a Python library for accessing PubMed.</p>
+    </article>
+  </div>
+</section>
 
-      <section class="case-study-section section-pad" id="infodengue" aria-labelledby="infodengue-title">
-        <div class="container section-grid">
-          <div class="section-intro">
-            <p class="eyebrow section-label"><span>02 /</span> Public health</p>
-            <h2 id="infodengue-title">Infodengue</h2>
-            <p>An initiative for monitoring mosquito-borne diseases in Brazil,
-              co-founded by <a href="https://ceph.fgv.br/node/91">Flávio Codeço Coelho</a>
-              and other researchers.</p>
-            <a class="text-link" href="https://info.dengue.mat.br/">
-              More about Infodengue <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div class="about-copy">
-            <p class="about-lead">Data visualization, web development, and DevOps.</p>
-            <p>
-              Contributions included public-health data visualizations,
-              web platform features, and development and deployment workflows.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="case-study-section section-pad" id="literev" aria-labelledby="literev-title">
-        <div class="container section-grid">
-          <div class="section-intro">
-            <p class="eyebrow section-label"><span>03 /</span> Literature review</p>
-            <h2 id="literev-title">LiteRev</h2>
-            <p>A scientific literature review project connected to The GRAPH Network.
-              Its University of Geneva founding team includes
-              <a href="https://unige.ch/medecine/isg/research/infectious-diseases-and-mathematical-modelling-professor-olivia-keiser/group-members/erol-orel">Erol Orel</a>,
-              <a href="https://www.unige.ch/unitec/en/presentation/innogap-proof-of-principle-fund/projetsfinances">Fatma Aziza Merzouki</a>,
-              and <a href="https://www.unige.ch/medecine/isg/research/infectious-diseases-and-mathematical-modelling-professor-olivia-keiser/group-members/olivia-keiser">Professor Olivia Keiser</a>.</p>
-            <a class="text-link" href="https://literev.unige.ch/">
-              More about LiteRev <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div class="about-copy">
-            <p class="about-lead">Research data workflows, search, and software infrastructure.</p>
-            <p>
-              Contributions included technical leadership, data processing,
-              clustering, AI-related work, benchmarking, background tasks with Celery,
-              search with Elasticsearch, web development, and DevOps.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {% include "contact.njk" %}
+<div class="projects-contact">
+  {% include "contact.njk" %}
+</div>
